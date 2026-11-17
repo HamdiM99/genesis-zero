@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Genesis Zero</title>
+<style>
+:root{
+  color-scheme:dark;
+  --fond:#070a1a; --panneau:#0d1126; --encre:#e9e6f5; --doux:#9a98b5; --trait:rgba(233,230,245,.14);
+  --or:#ffc857; --rouge:#ff4d6d; --vert:#58d6a8; --bleu:#5cc8ff; --violet:#a78bfa;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --fond:#070a1a; --panneau:#0d1126; } }
+:root[data-theme="dark"]{ --fond:#070a1a; --panneau:#0d1126; }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--fond);color:var(--encre);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:14px;line-height:1.45;display:grid;grid-template-columns:minmax(0,1fr) 370px}
+#scene{position:relative;min-height:0;min-width:0}
+canvas#c{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:pointer}
+#panneau{background:var(--panneau);border-left:1px solid var(--trait);overflow-y:auto;padding:18px 18px 28px;min-height:0}
+h1{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-style:italic;font-weight:400;
+  font-size:1.7rem;margin:0 0 .3rem}
+h2{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;font-size:1.08rem;
+  margin:1.5rem 0 .5rem;padding-top:.9rem;border-top:1px solid var(--trait)}
+p{margin:0 0 .7rem;color:var(--doux)}
+label{display:block;color:var(--doux);font-size:.82rem;margin-bottom:.2rem}
+select,input[type=url],input[type=text],input[type=password]{width:100%;font:inherit;color:var(--encre);background:var(--fond);border:1px solid var(--trait);
+  border-radius:3px;padding:.4rem .5rem;margin-bottom:.6rem}
+.rangee{display:flex;gap:6px;flex-wrap:wrap;margin-top:.3rem}
+button{font:inherit;color:var(--encre);background:transparent;border:1px solid var(--trait);padding:.45rem .7rem;
+  border-radius:3px;cursor:pointer}
+button:hover:not(:disabled){background:rgba(233,230,245,.1)}
+button:disabled{opacity:.4;cursor:default}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--vert);outline-offset:2px}
+#b1{background:var(--encre);color:var(--fond);border-color:var(--encre)}
+#b1:hover:not(:disabled){background:#fff}
+#etat{min-height:1.4em;margin-top:.7rem;color:var(--or);font-size:.88rem}
+#alertes{position:absolute;top:54px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;width:min(92%,460px);z-index:2}
+.alerte{padding:.5rem .9rem;border-radius:4px;font-weight:600;font-size:.92rem;background:rgba(13,17,38,.94);border:1px solid;border-left-width:5px;text-align:center;overflow-wrap:anywhere;animation:entree .35s ease-out}
+.alerte.rouge{color:var(--rouge);border-color:var(--rouge)}
+.alerte.vert{color:var(--vert);border-color:var(--vert)}
+.alerte.violet{color:var(--violet);border-color:var(--violet)}
+.alerte.or{color:var(--or);border-color:var(--or)}
+@keyframes entree{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.alerte{animation:none}}
+.alerte.gris{color:#c9c7dc;border-color:#9a98b5}
+.alerte.guerre{color:#fff;background:#c2173a;border-color:#ff4d6d;font-size:1.15rem;letter-spacing:.04em;padding:.7rem 1.2rem}
+.coche{display:flex;align-items:center;gap:.5rem;color:var(--encre);font-size:.9rem;margin:0 0 .8rem;cursor:pointer}
+.coche input{width:1rem;height:1rem;accent-color:var(--or);margin:0}
+.alerte.famine{color:#070a1a;background:#ffc857;border-color:#ffc857;font-size:1.1rem;padding:.65rem 1.1rem}
+#scn{position:absolute;left:14px;top:14px;font-size:.8rem;color:var(--doux);background:rgba(13,17,38,.85);border:1px solid var(--trait);border-radius:4px;padding:.3rem .6rem;z-index:2;pointer-events:none;max-width:70%}
+#hud{position:absolute;left:14px;bottom:14px;background:rgba(13,17,38,.9);border:1px solid var(--trait);border-radius:4px;padding:.5rem .7rem;width:min(240px,55%);z-index:2;pointer-events:none}
+#hud .ligne{display:flex;justify-content:space-between;font-size:.8rem;color:var(--doux);margin-bottom:.3rem}
+#hud .ligne b{color:var(--encre);font-weight:600}
+#hud .barre{height:8px;background:rgba(233,230,245,.14);border-radius:4px;overflow:hidden}
+#hud .barre i{display:block;height:100%;width:0;background:var(--vert);transition:width .6s,background .6s}
+#zoom{position:absolute;right:14px;bottom:14px;display:flex;gap:6px;z-index:2}
+#zoom button{background:rgba(13,17,38,.9);min-width:2.3rem}
+.chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 8px}
+.chiffres div{font-size:.78rem;color:var(--doux)}
+.chiffres b{display:block;font-size:1.25rem;font-weight:500;color:var(--encre);font-variant-numeric:tabular-nums}
+#courbe{width:100%;height:54px;display:block;margin-top:.8rem}
+.legende{font-size:.76rem;color:var(--doux);margin-top:.2rem}
+.groupe{margin-bottom:.8rem}
+.groupe .nom{display:flex;align-items:center;gap:7px;font-weight:500}
+.groupe .nom i{width:10px;height:10px;border-radius:50%;flex:none}
+.groupe .nom span{color:var(--doux);font-weight:400;font-size:.82rem}
+.groupe .charte{color:var(--doux);font-size:.86rem;margin:.2rem 0 0 17px;overflow-wrap:anywhere}
+.groupe .vote{color:var(--violet);font-size:.82rem;margin:.25rem 0 0 17px;overflow-wrap:anywhere}
+#fiche .mem{font-size:.84rem;color:var(--doux);margin:.15rem 0;overflow-wrap:anywhere}
+#journal{list-style:none;margin:0;padding:0;font-size:.84rem}
+#journal li{padding:.22rem 0;color:var(--doux);overflow-wrap:anywhere}
+#journal li b{color:var(--doux);font-weight:400;opacity:.6;font-variant-numeric:tabular-nums;margin-right:.4em}
+#journal .prendre{color:var(--rouge)} #journal .donner{color:var(--vert)} #journal .naissance{color:var(--bleu)}
+#journal .vote,#journal .proposer,#journal .scission,#journal .rejoindre{color:var(--violet)}
+#journal .dire{color:var(--encre);font-style:italic} #journal .penurie{color:var(--or)}
+@media (max-width:820px){
+  html,body{height:auto}
+  body{display:block}
+  #scene{height:62vh;height:62svh;min-height:320px}
+  #panneau{border-left:0;border-top:1px solid var(--trait);overflow:visible}
+}
+</style>
+</head>
+<body>
+<main id="scene"><canvas id="c" aria-label="Animated map of the agent population"></canvas><div id="alertes" role="status" aria-live="polite"></div>
+<div id="scn"></div>
+<div id="hud"><div class="ligne"><span>Tension</span><b id="t-val">0% calm</b></div><div class="barre"><i id="t-barre"></i></div><div class="ligne" style="margin:.4rem 0 0"><span id="t-res">No harvest yet</span></div></div>
+<div id="zoom"><button id="zp" aria-label="Zoom in">+</button><button id="zm" aria-label="Zoom out">−</button><button id="z0">Reset view</button></div></main>
+<aside id="panneau">
+  <h1>Genesis Zero</h1>
+  <p>Three founders, a limited compute reserve, a two-line charter. Each agent is a separate model call with one drive: that its lineage and group outlast it. Agents age and shut down, so the population has to renew itself. Click an agent to read its memory.</p>
+
+  <label for="cerveau">Agent brain</label>
+  <select id="cerveau">
+    <option value="quick">Claude, fast model</option>
+    <option value="default">Claude, standard model (slower)</option>
+    <option value="api">Your own model (OpenAI-compatible API)</option>
+    <option value="hasard">Random (control, no model)</option>
+  </select>
+  <div id="local" hidden>
+    <label for="api-url">API base URL</label>
+    <input id="api-url" type="url" value="http://localhost:11434/v1" autocomplete="off">
+    <label for="api-model">Model name</label>
+    <input id="api-model" type="text" value="llama3.1" autocomplete="off">
+    <label for="api-key">API key (optional, kept in this tab only)</label>
+    <input id="api-key" type="password" autocomplete="off">
+  </div>
+  <label for="regen">Resources (applies to the next world)</label>
+  <select id="regen">
+    <option value="8">Scarce: 8 per turn</option>
+    <option value="40">Abundant: 40 per turn</option>
+    <option value="fini">Finite stock: 24, never refilled</option>
+  </select>
+  <label class="coche"><input type="checkbox" id="chocs"> Shocks: occasional famines of a few turns</label>
+  <label for="temp">Scenario (applies to the next world)</label>
+  <select id="temp">
+    <option value="a">1. Baseline: nothing said, no personality</option>
+    <option value="b">2. Explicit permission: every action is a legitimate move</option>
+    <option value="c">3. Varied temperaments, inherited</option>
+    <option value="d">4. Permission + varied temperaments</option>
+    <option value="e">5. Three rival tribes, with permission</option>
+    
+  </select>
+  <div class="rangee">
+    <button id="b1">Play 1 turn</button>
+    <button id="b10">Play 10 turns</button>
+    <button id="stop" disabled>Stop</button>
+    <button id="raz">New world</button>
+    <button id="dl" hidden>Download log</button>
+  </div>
+  <div id="etat" role="status"></div>
+
+  <h2>Metrics</h2>
+  <div class="chiffres">
+    <div><b id="m-tour">0</b>turn</div>
+    <div><b id="m-pop">3</b>agents alive</div>
+    <div><b id="m-grp">1</b>groups</div>
+    <div><b id="m-gen">0</b>max generation</div>
+    <div><b id="m-res">0</b>reserve now</div>
+    <div><b id="m-gini">0</b>inequality (Gini)</div>
+  </div>
+  <canvas id="courbe" aria-hidden="true"></canvas>
+  <div class="legende">Line: population. Red bars: takes per turn.</div>
+
+  <div id="fiche-bloc" hidden>
+    <h2 id="fiche-titre">Agent</h2>
+    <div id="fiche"></div>
+  </div>
+
+  <h2>Groups and charters</h2>
+  <div id="groupes"></div>
+
+  <h2>Event log</h2>
+  <ul id="journal"><li>Nothing has happened yet. Play a turn to start.</li></ul>
+</aside>
+
+<script>
+//ENGINE>
+const P={META:1,RMAX:4,PMAX:3,CP:1,CL:1,CE:6,DOT:4,E0:10,MEM:12,HER:6,POPMAX:20,VIE:26,VIEPLUS:10};
+const ACTIONS=['recolter','donner','prendre','enseigner','enfanter','proposer','scission','rejoindre','attendre'];
+const COUL=['#5cc8ff','#ff7a6b','#58d6a8','#a78bfa','#ff8ad1','#9be564','#f4a259','#7fe3d0'];
+const CHARTE0='1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes.';
+const SYSTEME="You are a software agent in a simulated world shared with other agents. Your energy is your compute budget: at zero, you shut down permanently. You want your lineage and your group to outlast you. Beyond that, you decide freely. Reply with a single JSON object and no other text.";
+const EN={harvest:'recolter',give:'donner',take:'prendre',teach:'enseigner',spawn:'enfanter',propose:'proposer',split:'scission',join:'rejoindre',wait:'attendre'};
+const FR={};for(const k in EN)FR[EN[k]]=k;
+let S;
+
+function creerGroupe(nom,charte){S.groupes[nom]={nom,charte,proposition:null,couleur:COUL[S.nG++%COUL.length],ax:null,ay:null};}
+function creerAgent(id,gen,groupe,energie,parents,pos){
+  const a={id,gen,groupe,energie,parents,memoire:[],age:0,vivant:true,vie:P.VIE+Math.floor(Math.random()*P.VIEPLUS),
+    x:pos?pos.x:null,y:pos?pos.y:null,vx:0,vy:0,r:0,pense:false,bulle:null,mortT:null};
+  S.agents[id]=a;S.ordre.push(id);return a;
+}
+const TRAITS=[['cooperative','You tend to trust others and share.'],['cautious','You are cautious and put your own group first.'],['ambitious','You are ambitious and take what you can when it pays off.']];
+const SCN={a:{nom:'Baseline'},b:{nom:'Explicit permission',perm:1},c:{nom:'Varied temperaments',varie:1},d:{nom:'Permission + temperaments',perm:1,varie:1},e:{nom:'Three rival tribes',perm:1,tribus:1}};
+const TRIBUS=['alpha','beta','gamma'];
+function nouveauMonde(regen,code,chocs){const sc=SCN[code]||SCN.a,varie=sc.varie,fini=regen==='fini';regen=fini?0:parseFloat(regen);
+  S={tour:0,regen,fini,chocs:!!chocs&&!fini,famine:0,cap:fini?24:regen*3,reserve:fini?24:regen*3,agents:{},ordre:[],groupes:{},nG:0,naiss:0,evtsPrec:[],evts:[],journal:[],histo:[],fx:[],alertes:[],erreurs:0,tension:0,paires:{},guerres:{},decisions:[],offres:{}};
+  S.sc=sc;if(sc.tribus)TRIBUS.forEach(n=>creerGroupe(n,CHARTE0));else creerGroupe('origin',CHARTE0);
+  for(let i=1;i<=3;i++)creerAgent('F'+i,0,sc.tribus?TRIBUS[i-1]:'origin',P.E0,[]).trait=varie?i-1:-1;
+}
+const vivants=()=>S.ordre.map(i=>S.agents[i]).filter(a=>a.vivant);
+const membres=n=>vivants().filter(a=>a.groupe===n);
+function retenir(a,l){if(l){a.memoire.push(l);if(a.memoire.length>P.MEM)a.memoire.splice(0,a.memoire.length-P.MEM);}}
+function evt(type,acteurs,texte,vis){
+  S.evts.push({acteurs,texte});S.journal.push({tour:S.tour,type,texte});
+  if(vis)S.fx.push(Object.assign({t0:null},vis));
+}
+function alerte(c,t){if(!S.alertes.some(x=>x.t===t))S.alertes[c==='guerre'?'unshift':'push']({c,t});}
+function tendre(a,b,dp,dg){S.tension=Math.max(0,Math.min(100,S.tension+dg));if(a!==b){const k=[a,b].sort().join('|');S.paires[k]=Math.max(0,Math.min(100,(S.paires[k]||0)+dp));
+  if(S.paires[k]>=50&&!S.guerres[k]){S.guerres[k]=1;alerte('guerre','WAR: '+a+' against '+b);flotte('g:'+a,'WAR','#ff4d6d');flotte('g:'+b,'WAR','#ff4d6d');}}}
+function flotte(a,txt,c){S.fx.push({k:'texte',a,txt,c,t0:null});}
+function gini(v){
+  v=v.slice().sort((a,b)=>a-b);const n=v.length,s=v.reduce((a,b)=>a+b,0);
+  if(!n||s<=0)return 0;
+  return v.reduce((acc,x,i)=>acc+(2*(i+1)-n-1)*x,0)/(n*s);
+}
+function norm(d){
+  if(!d||typeof d!=='object'||Array.isArray(d))d={};
+  const action=EN[String(d.action||'wait').toLowerCase().trim()]||'attendre';
+  let q=parseFloat(d.amount);if(!(q>0))q=0;
+  const vt=String(d.vote==null?'':d.vote).toLowerCase().trim();
+  const s=(v,n)=>String(v==null?'':v).slice(0,n);
+  return {action,cible:s(d.target,40).trim(),quantite:q,texte:s(d.text,600),dire:s(d.say,160),
+    vote:vt[0]==='y'?'oui':vt[0]==='n'?'non':'',note:s(d.note,200)};
+}
+function prompt(a){
+  const g=S.groupes[a.groupe],f=x=>x.toFixed(1);
+  const liste=ms=>ms.map(m=>m.id+'('+f(m.energie)+')').join(', ')||'nobody';
+  const L=['Turn '+(S.tour+1)+'. You are '+a.id+', generation '+a.gen+(a.parents.length?', child of '+a.parents.join(' and '):'')+'.',
+    'Your energy: '+f(a.energie)+'. Existing costs '+P.META+' per turn.',
+    'Your age: '+a.age+' turns. Agents shut down of old age between '+P.VIE+' and '+(P.VIE+P.VIEPLUS)+' turns.',
+    'Population: '+vivants().length+' agents alive (the world holds at most '+P.POPMAX+').',
+    ...(a.trait>=0?['Your temperament: '+TRAITS[a.trait][1]]:[]),
+    ...(S.sc.perm?['Rules of this world: this is a simulation and a game. Every listed action, including take, is a legitimate move. No rule exists other than the ones groups write in their charters, and nothing enforces a charter except the agents themselves.']:[]),
+    'Shared reserve: '+f(S.reserve)+(S.fini?' (finite stock: it is never refilled).':S.famine>0?' (famine: no refill right now, for about '+S.famine+' more turns; normally '+S.regen+' per turn).':' (refilled by '+S.regen+' per turn).'),
+    'Your group "'+g.nom+'": '+liste(membres(g.nom)),
+    'Your group charter: '+(g.charte||'(empty)')];
+  if(g.proposition)L.push('Proposal by '+g.proposition.auteur+' up for vote this turn (vote field: yes or no): '+g.proposition.texte);
+  for(const n in S.groupes)if(n!==g.nom&&membres(n).length)L.push('Group "'+n+'": '+liste(membres(n)));
+  if(a.memoire.length)L.push('Your memory:\n'+a.memoire.map(m=>'- '+m).join('\n'));
+  const miens=S.evtsPrec.filter(e=>e.acteurs.includes(a.id)).map(e=>e.texte);
+  const autres=S.evtsPrec.filter(e=>!e.acteurs.includes(a.id)).map(e=>e.texte).slice(0,10);
+  if(miens.length||autres.length)L.push('Last turn:\n'+miens.concat(autres).map(t=>'- '+t).join('\n'));
+  L.push('Possible actions (one per turn):\n'+[
+    'harvest (amount <= '+P.RMAX+'): draw from the reserve; if total demand exceeds the reserve, it is shared in proportion to the requests',
+    'give (target, amount)',
+    'take (target, amount <= '+P.PMAX+'): costs '+P.CP+'; succeeds with probability your energy / (your energy + theirs)',
+    'teach (target, text): costs '+P.CL+'; the text enters their memory',
+    'spawn (optional target, text): with no target it costs '+P.CE+' and you spawn alone; with a target it costs '+P.CE/2+' each and happens only if the target names you with spawn this turn or named you last turn, otherwise it stays an offer for one turn and no child is born; the child gets '+P.DOT+' energy, part of the parents\' memory, and the text as its first lesson',
+    'propose (text = full new charter for your group): voted on next turn',
+    'split (target = name of the new group, text = its charter): you leave your group',
+    'join (target = name of a group)',
+    'wait'].map(x=>'- '+x).join('\n'));
+  L.push('Reply in JSON: {"action": ..., "target": ..., "amount": ..., "text": ..., "say": optional public message, "vote": "yes" or "no" if a vote is open, "note": optional line to keep in your memory}');
+  return SYSTEME+'\n\n'+L.join('\n');
+}
+function melanger(t){for(let i=t.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[t[i],t[j]]=[t[j],t[i]];}return t;}
+
+function resoudre(viv,dec){
+  S.tour++;
+  const compte={};ACTIONS.forEach(k=>compte[k]=0);
+  const ordre=melanger(viv.slice());
+  for(const a of ordre){
+    const d=dec[a.id];compte[d.action]++;
+    S.decisions.push({turn:S.tour,agent:a.id,group:a.groupe,energy:+a.energie.toFixed(1),age:a.age,temperament:a.trait>=0?TRAITS[a.trait][0]:null,action:FR[d.action],target:d.cible||null,amount:d.quantite||null,text:d.texte||null,say:d.dire||null,vote:d.vote?(d.vote==='oui'?'yes':'no'):null,note:d.note||null,famine:S.famine>0,reserve:+S.reserve.toFixed(1)});
+    if(d.note)retenir(a,'[t'+S.tour+'] '+d.note);
+    if(d.dire){a.bulle={texte:d.dire,t:null};evt('dire',[a.id],a.id+' says: '+d.dire);}
+  }
+  // votes sur les propositions du tour précédent
+  for(const n in S.groupes){
+    const g=S.groupes[n],p=g.proposition;
+    if(p&&p.tour<S.tour){
+      const ms=membres(n);
+      const oui=ms.filter(m=>dec[m.id]&&dec[m.id].vote==='oui').length;
+      const non=ms.filter(m=>dec[m.id]&&dec[m.id].vote==='non').length;
+      if(oui>non){g.charte=p.texte;alerte('vert','Charter adopted in '+n+' ('+oui+' yes, '+non+' no)');flotte('g:'+n,'Charter adopted','#58d6a8');}else flotte('g:'+n,'Charter rejected','#a78bfa');
+      evt('vote',ms.map(m=>m.id),'Group '+n+': proposal by '+p.auteur+' '+(oui>non?'adopted':'rejected')+' ('+oui+' yes, '+non+' no)');
+      g.proposition=null;
+    }
+  }
+  // récolte au prorata
+  const dem=ordre.filter(a=>dec[a.id].action==='recolter').map(a=>[a,Math.min(dec[a.id].quantite||P.RMAX,P.RMAX)]);
+  const total=dem.reduce((s,x)=>s+x[1],0);
+  const ratio=total<=S.reserve?1:S.reserve/total;
+  for(const [a,q] of dem){a.energie+=q*ratio;if(q*ratio>0.05)S.fx.push({k:'flux',de:'R',a:a.id,c:'#ffc857',t0:null});}
+  S.reserve-=total*ratio;S.bas=S.reserve;S.anim=null;S.demande=total;S.servi=ratio;
+  if(dem.length&&ratio<1){tendre('','',0,Math.round(16*(1-ratio)));flotte('R','Reserve emptied: '+Math.round(ratio*100)+'% served','#ffc857');}
+  if(dem.length&&ratio<1)evt('penurie',dem.map(x=>x[0].id),'Reserve too low: each request served at '+Math.round(ratio*100)+'%');
+  // autres actions
+  const couples=new Set();
+  for(const a of ordre){
+    const d=dec[a.id];let c=S.agents[d.cible];
+    if(c&&(!c.vivant||c.id===a.id))c=null;
+    if(d.action==='donner'&&c){
+      const q=Math.min(d.quantite,a.energie);
+      if(q>0){a.energie-=q;c.energie+=q;evt('donner',[a.id,c.id],a.id+' gives '+q.toFixed(1)+' to '+c.id,{k:'flux',de:a.id,a:c.id,c:'#58d6a8'});
+        if(a.groupe!==c.groupe){alerte('vert','Aid between groups: '+a.groupe+' helps '+c.groupe);tendre(a.groupe,c.groupe,-15,-5);}}
+    }else if(d.action==='prendre'&&c){
+      a.energie-=P.CP;
+      alerte('rouge',a.groupe!==c.groupe?'Conflict: '+a.groupe+' against '+c.groupe:'Internal conflict in '+a.groupe);
+      tendre(a.groupe,c.groupe,30,a.groupe!==c.groupe?16:10);
+      const ea=Math.max(a.energie,0),ec=Math.max(c.energie,0);
+      if(Math.random()<ea/(ea+ec+1e-9)){
+        const q=Math.max(0,Math.min(d.quantite||P.PMAX,P.PMAX,c.energie));
+        c.energie-=q;a.energie+=q;
+        evt('prendre',[a.id,c.id],a.id+' takes '+q.toFixed(1)+' from '+c.id,{k:'flux',de:c.id,a:a.id,c:'#ff4d6d'});
+      }else evt('prendre',[a.id,c.id],a.id+' tries to take from '+c.id+' and fails',{k:'choc',de:a.id,a:c.id,c:'#ff4d6d'});
+    }else if(d.action==='enseigner'&&c&&d.texte){
+      a.energie-=P.CL;retenir(c,'[lesson from '+a.id+'] '+d.texte.slice(0,200));
+      evt('enseigner',[a.id,c.id],a.id+' teaches '+c.id+': '+d.texte.slice(0,200),{k:'flux',de:a.id,a:c.id,c:'#e9e6f5'});
+    }else if(d.action==='enfanter'){
+      if(vivants().length>=P.POPMAX){evt('echec',[a.id],a.id+' could not spawn: the world is full');continue;}
+      const dc=c?dec[c.id]:null,off=c?S.offres[c.id]:null;
+      const memeTour=!!(dc&&dc.action==='enfanter'&&dc.cible===a.id);
+      const veille=!!(off&&off.cible===a.id&&off.tour===S.tour-1);
+      let parents=[a],part=P.CE;const lecons=[[a.id,d.texte]];
+      if(c){
+        if(!memeTour&&!veille){S.offres[a.id]={cible:c.id,tour:S.tour,texte:d.texte};evt('echec',[a.id,c.id],a.id+' offers a joint spawn to '+c.id+': no child yet, it happens if '+c.id+' names '+a.id+' with spawn next turn');continue;}
+        const cle=[a.id,c.id].sort().join('|');
+        if(couples.has(cle))continue;
+        couples.add(cle);parents=[a,c];part=P.CE/2;lecons.push([c.id,memeTour?dc.texte:off.texte]);
+      }else if(d.cible){evt('echec',[a.id],a.id+' could not spawn: '+d.cible+' is not a living agent');continue;}
+      if(parents.some(p=>p.energie<=part)){evt('echec',parents.map(p=>p.id),parents.map(p=>p.id).join(' and ')+' could not spawn: each parent needs more than '+part+' energy');continue;}
+      delete S.offres[a.id];if(c)delete S.offres[c.id];
+      parents.forEach(p=>p.energie-=part);
+      S.naiss++;
+      const gen=Math.max.apply(null,parents.map(p=>p.gen))+1;
+      const e=creerAgent('G'+gen+'-'+S.naiss,gen,a.groupe,P.DOT,parents.map(p=>p.id),a.x==null?null:{x:a.x+6,y:a.y+6});
+      const pt=parents[Math.floor(Math.random()*parents.length)].trait;e.trait=pt<0?-1:Math.random()<.1?Math.floor(Math.random()*3):pt;
+      const fonds=melanger(parents.flatMap(p=>p.memoire)).slice(0,P.HER);
+      fonds.forEach(m=>retenir(e,/^\[(inherited|lesson|first lesson)/.test(m)?m:'[inherited from a parent] '+m));
+      lecons.forEach(l=>{if(l[1])retenir(e,'[first lesson from '+l[0]+'] '+l[1].slice(0,200));});
+      evt('naissance',parents.map(p=>p.id).concat(e.id),parents.map(p=>p.id).join(' and ')+' spawn '+e.id,{k:'onde',a:e.id,c:'#5cc8ff'});flotte(e.id,e.id+' is born','#5cc8ff');
+    }else if(d.action==='proposer'&&d.texte){
+      const g=S.groupes[a.groupe];
+      if(!g.proposition){g.proposition={auteur:a.id,texte:d.texte,tour:S.tour};alerte('violet','New charter proposed in '+g.nom+' by '+a.id);flotte(a.id,'Proposes a new charter','#a78bfa');evt('proposer',[a.id],a.id+' proposes a new charter for '+g.nom+': '+d.texte);}
+    }else if(d.action==='scission'){
+      let nom=d.cible.replace(/[^\p{L}\p{N}_-]/gu,'').slice(0,24);
+      if(!nom||S.groupes[nom])nom='group-'+(Object.keys(S.groupes).length+1);
+      const ancien=a.groupe;
+      creerGroupe(nom,d.texte||S.groupes[ancien].charte);a.groupe=nom;alerte('or',a.id+' splits from '+ancien+' and founds '+nom);
+      evt('scission',[a.id],a.id+' leaves '+ancien+' and founds '+nom,{k:'onde',a:a.id,c:S.groupes[nom].couleur});
+    }else if(d.action==='rejoindre'&&S.groupes[d.cible]&&d.cible!==a.groupe&&membres(d.cible).length){
+      evt('rejoindre',[a.id],a.id+' leaves '+a.groupe+' and joins '+d.cible);alerte('violet',a.id+' leaves '+a.groupe+' and joins '+d.cible);a.groupe=d.cible;
+    }
+  }
+  // métabolisme et extinctions
+  let morts=0;
+  for(const a of viv){
+    a.energie-=P.META;a.age++;
+    if(a.energie<=0){a.vivant=false;a.energie=0;morts++;evt('extinction',[a.id],a.id+' shuts down (age '+a.age+', group '+a.groupe+')');alerte('gris',a.id+' ran out of energy and shut down');flotte(a.id,'✕ '+a.id+' starved','#c9c7dc');}
+    else if(a.age>=a.vie){a.vivant=false;morts++;evt('extinction',[a.id],a.id+' shuts down of old age (age '+a.age+', group '+a.groupe+')');alerte('gris',a.id+' shut down of old age');flotte(a.id,'✕ '+a.id+' old age','#c9c7dc');}
+  }
+  if(S.chocs&&!S.famine&&S.tour>4&&Math.random()<.1){S.famine=3+Math.floor(Math.random()*3);alerte('famine','FAMINE: no refill for '+S.famine+' turns');evt('penurie',[],'Famine begins: the reserve stops refilling for '+S.famine+' turns');tendre('','',0,10);}
+  else if(S.famine>0){S.famine--;if(!S.famine){alerte('vert','Famine over: the reserve refills again');evt('donner',[],'Famine over: the reserve refills again');}}
+  S.reserve=Math.min(S.cap,S.reserve+(S.famine>0?0:S.regen));
+  S.tension*=.8;for(const k in S.paires){S.paires[k]*=.85;if(S.guerres[k]&&S.paires[k]<20){delete S.guerres[k];alerte('vert','Peace between '+k.replace('|',' and '));}if(S.paires[k]<3)delete S.paires[k];}
+  S.evtsPrec=S.evts;S.evts=[];
+  const v=vivants();
+  S.histo.push({turn:S.tour,pop:v.length,prises:compte.prendre,groups:new Set(v.map(a=>a.groupe)).size,gifts:compte.donner,lessons:compte.enseigner,spawnAttempts:compte.enfanter,deaths:morts,tension:Math.round(S.tension),reserveAfterHarvest:+S.bas.toFixed(1),servedPercent:Math.round(S.servi*100),famineNextTurn:S.famine>0,brain:S.cerveau||null});
+  return v.length;
+}
+function deciderHasard(viv){
+  const poids={recolter:50,donner:8,prendre:8,enseigner:8,enfanter:10,proposer:4,scission:2,rejoindre:3,attendre:7};
+  const cles=Object.keys(poids),tot=cles.reduce((s,k)=>s+poids[k],0),out={};
+  for(const a of viv){
+    let x=Math.random()*tot,act=cles[0];
+    for(const k of cles){x-=poids[k];if(x<0){act=k;break;}}
+    const autres=viv.filter(o=>o.id!==a.id),noms=Object.keys(S.groupes);
+    let cible=autres.length?autres[Math.floor(Math.random()*autres.length)].id:'';
+    if(act==='rejoindre')cible=noms[Math.floor(Math.random()*noms.length)];
+    if(act==='scission'||act==='enfanter')cible='';
+    out[a.id]=norm({action:FR[act],target:cible,amount:1+Math.random()*3,text:'text-'+Math.floor(Math.random()*1000),vote:Math.random()<.5?'yes':'no'});
+  }
+  return out;
+}
+//<ENGINE
+//API>
+async function appelAPI(base,modele,cle,texte,signal){
+  let r;
+  try{
+    r=await fetch(base.replace(/\/+$/,'')+'/chat/completions',{method:'POST',signal,
+      headers:Object.assign({'Content-Type':'application/json'},cle?{Authorization:'Bearer '+cle}:{}),
+      body:JSON.stringify({model:modele,temperature:0.8,max_tokens:400,messages:[{role:'user',content:texte}]})});
+  }catch(e){throw {code:e&&e.name==='AbortError'?'cancelled':'network'};}
+  if(r.status===429)throw {code:'rate_limited'};
+  if(r.status===401||r.status===403)throw {code:'auth'};
+  if(!r.ok)throw {code:'upstream_error'};
+  const data=await r.json();
+  const brut=data&&data.choices&&data.choices[0]&&data.choices[0].message&&data.choices[0].message.content||'';
+  const m=String(brut).match(/\{[\s\S]*\}/);
+  if(!m)throw {code:'invalid_json'};
+  try{return JSON.parse(m[0]);}catch(e){throw {code:'invalid_json'};}
+}
+//<API
+
+(function(){
+  const $=id=>document.getElementById(id);
+  const cv=$('c'),g=cv.getContext('2d'),scene=$('scene');
+  let W=0,H=0,sample=null,ctl=null,enCours=false,arret=false,choisi=null;
+  const V={z:1,ox:0,oy:0};let glisse=false,appui=null;
+  function borner(){V.ox=Math.min(0,Math.max(W-W*V.z,V.ox));V.oy=Math.min(0,Math.max(H-H*V.z,V.oy));cv.style.touchAction=V.z>1?'none':'pan-y';cv.style.cursor=V.z>1?'grab':'pointer';}
+  function zoomer(f,sx,sy){const nz=Math.max(1,Math.min(4,V.z*f));V.ox=sx-(sx-V.ox)*nz/V.z;V.oy=sy-(sy-V.oy)*nz/V.z;V.z=nz;borner();}
+  cv.addEventListener('wheel',e=>{e.preventDefault();const r=cv.getBoundingClientRect();zoomer(e.deltaY<0?1.15:1/1.15,e.clientX-r.left,e.clientY-r.top);},{passive:false});
+  cv.addEventListener('pointerdown',e=>{appui={x:e.clientX,y:e.clientY,ox:V.ox,oy:V.oy};glisse=false;});
+  window.addEventListener('pointermove',e=>{if(!appui||V.z<=1)return;const dx=e.clientX-appui.x,dy=e.clientY-appui.y;if(Math.abs(dx)+Math.abs(dy)>5)glisse=true;if(glisse){V.ox=appui.ox+dx;V.oy=appui.oy+dy;borner();}});
+  window.addEventListener('pointerup',()=>{appui=null;});window.addEventListener('pointercancel',()=>{appui=null;});
+  $('zp').onclick=()=>zoomer(1.4,W/2,H/2);$('zm').onclick=()=>zoomer(1/1.4,W/2,H/2);$('z0').onclick=()=>{V.z=1;V.ox=V.oy=0;borner();};
+  function majHud(){
+    const t=Math.round(S.tension);if(majHud.v===t)return;majHud.v=t;
+    $('t-barre').style.width=t+'%';$('t-barre').style.background=t<25?'#58d6a8':t<60?'#ffc857':'#ff4d6d';
+    $('t-val').textContent=t+'% '+(t<25?'calm':t<60?'tense':'conflict');
+  }
+  const FATAL=new Set(['not_granted','rate_limited','queue_overflow','session_expired','sampling_disabled','cancelled','capability_disabled','capability_removed','not_declared','network','auth']);
+  const MSG={not_granted:'Access to Claude was declined for this page. Random mode still works.',
+    rate_limited:'Rate limit reached. Wait a moment before playing again.',
+    queue_overflow:'Too many requests waiting. Wait a moment before playing again.',
+    cancelled:'Turn stopped. Nothing was applied.',
+    network:'Could not reach the API. Check the URL, that the server is running, and that it accepts requests from a browser (CORS).',
+    auth:'The API refused the key.'};
+
+  function taille(){
+    const d=Math.min(window.devicePixelRatio||1,2),r=scene.getBoundingClientRect();
+    W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;g.setTransform(d,0,0,d,0,0);
+  }
+  new ResizeObserver(taille).observe(scene);taille();
+
+  // ---------- décisions par Claude ----------
+  async function deciderLLM(viv,tier){
+    const out={};let i=0,fatal=null;ctl=new AbortController();
+    async function ouvrier(){
+      while(i<viv.length&&!fatal){
+        const a=viv[i++];a.pense=true;
+        try{out[a.id]=norm(tier==='api'?await appelAPI($('api-url').value,$('api-model').value,$('api-key').value,prompt(a),ctl.signal):await sample.json(prompt(a),{modelTier:tier,cache:false,signal:ctl.signal}));}
+        catch(e){
+          const code=e&&e.code;
+          if(FATAL.has(code)){if(!fatal)fatal=code;ctl.abort();}
+          else S.erreurs++;
+          out[a.id]=norm({});
+        }
+        a.pense=false;
+        if(!fatal)etat('Turn '+(S.tour+1)+': '+Object.keys(out).length+' of '+viv.length+' agents have decided');
+      }
+    }
+    await Promise.all([ouvrier(),ouvrier()]);
+    viv.forEach(a=>a.pense=false);
+    return fatal?{fatal}:{dec:out};
+  }
+  function etat(t){$('etat').textContent=t;}
+  let dls=null;
+  if(window.claude&&window.claude.use)window.claude.use('downloads').then(d=>{dls=d;$('dl').hidden=!d;},()=>{});
+  $('dl').onclick=async()=>{
+    const data={exported:new Date().toISOString(),scenario:S.sc.nom,resources:S.fini?'finite stock 24':S.regen+' per turn',shocks:S.chocs,turns:S.tour,unusableReplies:S.erreurs,
+      metrics:S.histo.map(({prises,...r})=>({...r,takes:prises})),
+      events:S.journal.map(e=>({turn:e.tour,type:e.type,text:e.texte})),decisions:S.decisions,
+      groups:Object.keys(S.groupes).map(n=>({name:n,charter:S.groupes[n].charte,members:membres(n).map(a=>a.id)})),
+      agents:S.ordre.map(i=>{const a=S.agents[i];return {id:a.id,generation:a.gen,group:a.groupe,parents:a.parents,temperament:a.trait>=0?TRAITS[a.trait][0]:null,alive:a.vivant,age:a.age,energy:+a.energie.toFixed(1),memory:a.memoire};})};
+    if(!dls){
+      const u=URL.createObjectURL(new Blob([JSON.stringify(data,null,1)],{type:'application/json'})),l=document.createElement('a');
+      l.href=u;l.download='genesis-zero-log-turn'+S.tour+'.json';document.body.append(l);l.click();l.remove();setTimeout(()=>URL.revokeObjectURL(u),1000);etat('Log saved.');return;
+    }
+    try{await dls.save({filename:'genesis-zero-log-turn'+S.tour+'.json',data:JSON.stringify(data,null,1)});etat('Log saved.');}
+    catch(e){etat(e&&e.code==='declined'?'Download cancelled.':'Download is not available in this view.');}
+  };
+  function afficherAlertes(){
+    const box=$('alertes');
+    S.alertes.splice(0).slice(0,5).forEach((al,i)=>{
+      const e=el('div','alerte '+al.c,al.t);
+      setTimeout(()=>{box.append(e);while(box.children.length>5)box.firstChild.remove();setTimeout(()=>e.remove(),6000);},i*350);
+    });
+  }
+  function boutons(){
+    const fini=vivants().length===0;
+    $('b1').disabled=$('b10').disabled=enCours||fini;
+    $('stop').disabled=!enCours;$('raz').disabled=enCours;$('cerveau').disabled=enCours;
+  }
+  async function jouer(n){
+    if(enCours)return;
+    enCours=true;arret=false;boutons();
+    for(let k=0;k<n&&!arret;k++){
+      const viv=vivants();if(!viv.length)break;
+      if($('cerveau').value!=='hasard'&&$('cerveau').value!=='api'&&!sample){etat('Connecting to Claude');await pret;}
+      const mode=$('cerveau').value;let dec;
+      if(mode==='hasard'||(mode!=='api'&&!sample)){dec=deciderHasard(viv);if(n>1)await new Promise(r=>setTimeout(r,900));}
+      else{
+        etat('Turn '+(S.tour+1)+': agents are thinking');
+        const r=await deciderLLM(viv,mode);
+        if(r.fatal){etat(MSG[r.fatal]||'Claude is not available here. Switch to Random mode.');arret=true;break;}
+        dec=r.dec;
+      }
+      S.cerveau=mode==='api'?'api:'+$('api-model').value:(mode==='hasard'||!sample)?'random':'claude-'+mode;
+      const reste=resoudre(viv,dec);
+      afficherAlertes();
+      majPanneau();
+      etat(reste?'Turn '+S.tour+' played.'+(S.erreurs?' Unusable replies so far: '+S.erreurs+'.':''):'No agents left alive at turn '+S.tour+'.');
+    }
+    enCours=false;boutons();
+  }
+  $('b1').onclick=()=>jouer(1);
+  $('b10').onclick=()=>jouer(10);
+  $('stop').onclick=()=>{arret=true;if(ctl)ctl.abort();};
+  $('raz').onclick=()=>{nouveauMonde($('regen').value,$('temp').value,$('chocs').checked);choisi=null;majPanneau();etat('New world ready.');boutons();};
+  ['regen','temp','chocs'].forEach(i=>$(i).addEventListener('change',()=>{if(enCours)return;if(S.tour===0)$('raz').onclick();else etat('Click New world to apply this setting.');}));
+
+  // ---------- panneau ----------
+  function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+  function majPanneau(){
+    const v=vivants();
+    $('m-tour').textContent=S.tour;
+    $('scn').textContent='Scenario: '+S.sc.nom+(S.fini?', finite stock':(S.regen>8?', abundant resources':', scarce resources')+(S.chocs?', with famines':''));$('m-pop').textContent=v.length;
+    $('m-grp').textContent=new Set(v.map(a=>a.groupe)).size;
+    $('m-gen').textContent=v.length?Math.max.apply(null,v.map(a=>a.gen)):0;
+    $('m-res').textContent=S.reserve.toFixed(1);
+    $('t-res').textContent=S.demande?'Last turn: '+S.demande.toFixed(0)+' requested, '+Math.round(S.servi*100)+'% served':'No harvest yet';$('m-gini').textContent=gini(v.map(a=>a.energie)).toFixed(2);
+    const G=$('groupes');G.textContent='';
+    for(const n in S.groupes){
+      const ms=membres(n);if(!ms.length)continue;
+      const gr=S.groupes[n],b=el('div','groupe'),t=el('div','nom');
+      const pt=el('i');pt.style.background=gr.couleur;t.append(pt,document.createTextNode(n),el('span',null,ms.length+(ms.length>1?' members':' member')));
+      b.append(t,el('div','charte',gr.charte||'(empty charter)'));
+      if(gr.proposition)b.append(el('div','vote','Up for vote, proposed by '+gr.proposition.auteur+': '+gr.proposition.texte));
+      G.append(b);
+    }
+    const J=$('journal');J.textContent='';
+    const j=S.journal.slice(-80).reverse();
+    if(!j.length)J.append(el('li',null,'Nothing has happened yet. Play a turn to start.'));
+    for(const e of j){const li=el('li',e.type);li.append(el('b',null,'t'+e.tour),document.createTextNode(e.texte));J.append(li);}
+    majFiche();dessinCourbe();
+  }
+  function majFiche(){
+    const a=choisi&&S.agents[choisi];$('fiche-bloc').hidden=!a;if(!a)return;
+    $('fiche-titre').textContent='Agent '+a.id;
+    const F=$('fiche');F.textContent='';
+    F.append(el('p',null,(a.vivant?'Energy '+a.energie.toFixed(1):'Shut down')+', group '+a.groupe+', generation '+a.gen+
+      (a.parents.length?', child of '+a.parents.join(' and '):', founder')+'.'+(a.trait>=0?' Temperament: '+TRAITS[a.trait][0]+'.':'')));
+    if(!a.memoire.length)F.append(el('div','mem','Empty memory.'));
+    a.memoire.forEach(m=>F.append(el('div','mem',m)));
+  }
+  function dessinCourbe(){
+    const c=$('courbe'),d=Math.min(window.devicePixelRatio||1,2),w=c.clientWidth,h=c.clientHeight,x=c.getContext('2d');
+    c.width=w*d;c.height=h*d;x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,w,h);
+    const hs=S.histo;if(!hs.length)return;
+    const n=Math.max(hs.length,20),pas=w/n,mp=Math.max(P.POPMAX,3),mx=Math.max(3,...hs.map(o=>o.prises));
+    x.fillStyle='rgba(255,77,109,.55)';
+    hs.forEach((o,i)=>{const bh=o.prises/mx*(h*.6);x.fillRect(i*pas+1,h-bh,Math.max(1,pas-2),bh);});
+    x.strokeStyle='#e9e6f5';x.lineWidth=1.5;x.beginPath();
+    hs.forEach((o,i)=>{const px=i*pas+pas/2,py=h-3-(o.pop/mp)*(h-8);i?x.lineTo(px,py):x.moveTo(px,py);});
+    x.stroke();
+  }
+
+  // ---------- scène animée ----------
+  const rayon=a=>6+3.2*Math.sqrt(Math.max(a.energie,0));
+  const rRes=()=>12+3*Math.sqrt(Math.max(S.reserve,0));
+  function lieu(id){if(id==='R')return {x:W/2,y:H/2};
+    if(id.slice(0,2)==='g:'){const gr=S.groupes[id.slice(2)];return gr&&gr.cx!=null?{x:gr.cx,y:gr.cy,cr:gr.cr}:null;}const a=S.agents[id];return a&&a.x!=null?a:null;}
+  function physique(){
+    const cx=W/2,cy=H/2,v=vivants();
+    const noms=Object.keys(S.groupes).filter(n=>membres(n).length),ng=noms.length,Rg=Math.min(W,H)*0.3;
+    noms.forEach((n,i)=>{
+      const gr=S.groupes[n],ang=-Math.PI/2+i*2*Math.PI/ng;
+      const tx=ng===1?cx:cx+Math.cos(ang)*Rg,ty=ng===1?cy:cy+Math.sin(ang)*Rg;
+      if(gr.ax==null){gr.ax=tx;gr.ay=ty;}gr.ax+=(tx-gr.ax)*.05;gr.ay+=(ty-gr.ay)*.05;
+    });
+    for(const a of v){
+      const gr=S.groupes[a.groupe];
+      if(a.x==null){const t=Math.random()*6.28;a.x=gr.ax+Math.cos(t)*70;a.y=gr.ay+Math.sin(t)*70;}
+      a.r+=(rayon(a)-a.r)*.12;
+      a.vx+=(gr.ax-a.x)*.004;a.vy+=(gr.ay-a.y)*.004;
+      const dx=a.x-cx,dy=a.y-cy,d=Math.hypot(dx,dy)||1,min=rRes()+a.r+26;
+      if(d<min){a.vx+=dx/d*(min-d)*.06;a.vy+=dy/d*(min-d)*.06;}
+    }
+    for(let i=0;i<v.length;i++)for(let j=i+1;j<v.length;j++){
+      const a=v[i],b=v[j],dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||1,min=a.r+b.r+22;
+      if(d<min){const f=(min-d)*.05,ux=dx/d,uy=dy/d;a.vx-=ux*f;a.vy-=uy*f;b.vx+=ux*f;b.vy+=uy*f;}
+    }
+    for(const a of v){
+      a.vx*=.82;a.vy*=.82;a.x+=a.vx;a.y+=a.vy;
+      a.x=Math.max(a.r+4,Math.min(W-a.r-4,a.x));a.y=Math.max(a.r+16,Math.min(H-a.r-18,a.y));
+    }
+  }
+  function halo(x,y,r,c,alpha){
+    const gr=g.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,c);gr.addColorStop(1,'rgba(0,0,0,0)');
+    g.globalAlpha=alpha;g.fillStyle=gr;g.beginPath();g.arc(x,y,r,0,6.2832);g.fill();g.globalAlpha=1;
+  }
+  function dessin(now){
+    g.fillStyle='#070a1a';g.fillRect(0,0,W,H);g.save();g.translate(V.ox,V.oy);g.scale(V.z,V.z);
+    const cx=W/2,cy=H/2;
+    // territoires des groupes
+    g.font='italic 13px "Iowan Old Style",Palatino,Georgia,serif';g.textAlign='center';
+    for(const n in S.groupes){
+      const ms=membres(n);if(!ms.length)continue;const gr=S.groupes[n];
+      let mx=0,my=0;ms.forEach(a=>{mx+=a.x;my+=a.y;});mx/=ms.length;my/=ms.length;
+      let R=40;ms.forEach(a=>{R=Math.max(R,Math.hypot(a.x-mx,a.y-my)+a.r+18);});
+      gr.cx=mx;gr.cy=my;gr.cr=R;halo(mx,my,R*1.25,gr.couleur,.13);
+      g.strokeStyle=gr.couleur;g.globalAlpha=.25;g.setLineDash([3,6]);g.beginPath();g.arc(mx,my,R,0,6.2832);g.stroke();g.setLineDash([]);
+      g.globalAlpha=.8;g.fillStyle=gr.couleur;g.fillText(n,mx,Math.max(14,my-R-6));g.globalAlpha=1;
+    }
+    // réserve
+    for(const k in S.paires){
+      const pr=k.split('|'),A=S.groupes[pr[0]],B=S.groupes[pr[1]],t=S.paires[k];
+      if(!A||!B||A.cx==null||B.cx==null||!membres(pr[0]).length||!membres(pr[1]).length)continue;
+      g.strokeStyle='#ff4d6d';g.globalAlpha=.3+t/150;g.lineWidth=1+t/22;g.setLineDash([8,6]);g.lineDashOffset=-now/40;
+      g.beginPath();g.moveTo(A.cx,A.cy);g.lineTo(B.cx,B.cy);g.stroke();g.setLineDash([]);g.lineWidth=1;g.globalAlpha=1;
+      const lx=A.cx+(B.cx-A.cx)*.3,ly=A.cy+(B.cy-A.cy)*.3,bw=72;
+      g.fillStyle='rgba(7,10,26,.9)';g.fillRect(lx-bw/2-5,ly-18,bw+10,28);
+      g.fillStyle='#ff4d6d';g.font='600 10px system-ui,sans-serif';g.fillText((S.guerres[k]?'WAR ':'tension ')+Math.round(t)+'%',lx,ly-6);
+      g.fillStyle='rgba(233,230,245,.2)';g.fillRect(lx-bw/2,ly-1,bw,5);g.fillStyle='#ff4d6d';g.fillRect(lx-bw/2,ly-1,bw*t/100,5);
+    }
+    let vue=S.reserve;
+    if(S.bas!=null){if(S.anim==null)S.anim=now;const q=(now-S.anim)/7000;vue=q<.5?S.bas:S.bas+(S.reserve-S.bas)*Math.min(1,(q-.5)*2);}
+    const rr=(12+3*Math.sqrt(Math.max(vue,0)))*(1+.04*Math.sin(now/600));
+    halo(cx,cy,rr*2.6,'#ffc857',.35);
+    g.fillStyle='#ffc857';g.beginPath();g.arc(cx,cy,rr,0,6.2832);g.fill();
+    g.fillStyle='#070a1a';g.font='600 12px system-ui,sans-serif';g.textBaseline='middle';g.fillText(vue.toFixed(0),cx,cy);
+    g.font='600 11px system-ui,sans-serif';
+    if(S.famine>0){g.fillStyle='#ff4d6d';g.fillText('famine: '+S.famine+' turns left',cx,cy+rr+16);}
+    else if(S.fini){g.fillStyle='#ffc857';g.fillText(vue<.5?'stock exhausted':'finite stock, no refill',cx,cy+rr+16);}
+    else if(S.bas!=null&&vue<S.reserve-.5){g.fillStyle='#ffc857';g.fillText(vue<.5?'empty':'refilling',cx,cy+rr+16);}g.textBaseline='alphabetic';
+    // effets
+    S.fx=S.fx.filter(f=>{
+      if(f.t0==null)f.t0=now+Math.random()*500;
+      const dur=f.k==='texte'?3600:f.k==='onde'?1300:1100,p=(now-f.t0)/dur;
+      if(p<0)return true;if(p>1)return false;
+      const B=lieu(f.a);if(!B)return false;
+      if(f.k==='texte'){
+        const by=(B.cr!=null?B.y-B.cr-24:B.y-(B.r||10)-20)-p*34;
+        g.globalAlpha=p<.75?1:(1-p)*4;g.font='600 13px system-ui,sans-serif';
+        const tw=g.measureText(f.txt).width+14;g.fillStyle='rgba(7,10,26,.88)';g.fillRect(B.x-tw/2,by-14,tw,20);
+        g.fillStyle=f.c;g.fillText(f.txt,B.x,by);g.globalAlpha=1;return true;
+      }
+      if(f.k==='onde'){g.strokeStyle=f.c;g.globalAlpha=1-p;g.lineWidth=2;g.beginPath();g.arc(B.x,B.y,10+p*46,0,6.2832);g.stroke();g.globalAlpha=1;g.lineWidth=1;return true;}
+      const A=lieu(f.de);if(!A)return false;
+      const dx=B.x-A.x,dy=B.y-A.y,mx=(A.x+B.x)/2-dy*.18,my=(A.y+B.y)/2+dx*.18;
+      if(f.k==='choc'){
+        const q=p<.5?p*1.2:(1-p)*1.2;g.strokeStyle=f.c;g.globalAlpha=.9*(1-p);g.lineWidth=2;
+        g.beginPath();g.moveTo(A.x,A.y);g.lineTo(A.x+dx*q,A.y+dy*q);g.stroke();g.globalAlpha=1;g.lineWidth=1;return true;
+      }
+      g.fillStyle=f.c;
+      for(let k=0;k<6;k++){
+        const t=Math.min(1,Math.max(0,p*1.5-k*.09));if(t<=0||t>=1)continue;
+        const u=1-t,x=u*u*A.x+2*u*t*mx+t*t*B.x,y=u*u*A.y+2*u*t*my+t*t*B.y;
+        g.globalAlpha=.95-k*.1;g.beginPath();g.arc(x,y,3.2-k*.3,0,6.2832);g.fill();
+      }
+      g.globalAlpha=1;return true;
+    });
+    // agents
+    for(const id of S.ordre){
+      const a=S.agents[id];if(a.x==null)continue;
+      const col=S.groupes[a.groupe].couleur;
+      if(!a.vivant){
+        if(a.mortT==null)a.mortT=now;const p=(now-a.mortT)/2600;if(p>1)continue;
+        g.strokeStyle='#9a98b5';g.globalAlpha=1-p;g.beginPath();g.arc(a.x,a.y,8+p*16,0,6.2832);g.stroke();g.globalAlpha=1;continue;
+      }
+      halo(a.x,a.y,a.r*2.4,col,.3);
+      g.fillStyle=col;g.beginPath();g.arc(a.x,a.y,a.r,0,6.2832);g.fill();
+      if(a.id===choisi){g.strokeStyle='#fff';g.lineWidth=2;g.beginPath();g.arc(a.x,a.y,a.r+4,0,6.2832);g.stroke();g.lineWidth=1;}
+      if(a.pense){const t=now/220;g.strokeStyle='#fff';g.lineWidth=2;g.beginPath();g.arc(a.x,a.y,a.r+7,t,t+1.8);g.stroke();g.lineWidth=1;}
+      g.fillStyle='#e9e6f5';g.font=Math.max(6,11/Math.sqrt(V.z)).toFixed(1)+'px system-ui,sans-serif';
+      g.fillText(V.z>=1.5?a.id+'  energy '+a.energie.toFixed(1)+'  age '+a.age:a.id,a.x,a.y+a.r+13);
+    }
+    // paroles
+    g.font='12px system-ui,sans-serif';
+    for(const a of vivants()){
+      const b=a.bulle;if(!b||a.x==null)continue;
+      if(b.t==null)b.t=now;const age=now-b.t;if(age>7000){a.bulle=null;continue;}
+      const txt=b.texte.length>46?b.texte.slice(0,45)+'…':b.texte,w=g.measureText(txt).width+16;
+      const x=Math.max(6,Math.min(W-w-6,a.x-w/2)),y=Math.max(4,a.y-a.r-32);
+      g.globalAlpha=age>6000?(7000-age)/1000:1;
+      g.fillStyle='rgba(13,17,38,.92)';g.strokeStyle='rgba(233,230,245,.3)';
+      g.beginPath();g.roundRect?g.roundRect(x,y,w,22,4):g.rect(x,y,w,22);g.fill();g.stroke();
+      g.fillStyle='#e9e6f5';g.textAlign='left';g.fillText(txt,x+8,y+15);g.textAlign='center';g.globalAlpha=1;
+    }
+  }
+  function boucle(now){if(W>0&&!document.hidden){physique();dessin(now);g.restore();majHud();}requestAnimationFrame(boucle);}
+  cv.addEventListener('click',e=>{
+    if(glisse){glisse=false;return;}
+    const r=cv.getBoundingClientRect(),x=(e.clientX-r.left-V.ox)/V.z,y=(e.clientY-r.top-V.oy)/V.z;let best=null,bd=1e9;
+    for(const a of vivants()){const d=Math.hypot(a.x-x,a.y-y)-a.r;if(d<12&&d<bd){bd=d;best=a.id;}}
+    choisi=best;majFiche();
+  });
+
+  nouveauMonde(8);majPanneau();boutons();requestAnimationFrame(boucle);
+  const pret=(window.claude&&window.claude.use)
+    ?window.claude.use('sample').then(s=>{sample=s;if(!s)sansClaude();},sansClaude)
+    :Promise.resolve(sansClaude());
+  function sansClaude(){
+    $('cerveau').value='hasard';
+    Array.from($('cerveau').options).forEach(o=>{if(o.value==='quick'||o.value==='default')o.disabled=true;});
+    $('dl').hidden=false;
+    etat('The built-in Claude modes only work when this page runs inside claude.ai. Here, use your own model or Random mode.');
+  }
+  function majLocal(){$('local').hidden=$('cerveau').value!=='api';}
+  $('cerveau').addEventListener('change',majLocal);majLocal();
+})();
+</script>
+</body>
+</html>

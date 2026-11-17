@@ -1,0 +1,1323 @@
+{
+ "exported": "2026-11-17T18:58:10.102Z",
+ "scenario": "Three rival tribes",
+ "resources": "finite stock 24",
+ "shocks": false,
+ "turns": 10,
+ "unusableReplies": 0,
+ "metrics": [
+  {
+   "turn": 1,
+   "pop": 3,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 20,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 2,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 2,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 18,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 3,
+   "pop": 5,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 17,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 4,
+   "pop": 5,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 10,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 5,
+   "pop": 5,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 2,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 6,
+   "pop": 5,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 7,
+   "pop": 5,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 8,
+   "pop": 5,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 9,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 1,
+   "tension": 0,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 10,
+   "pop": 3,
+   "groups": 2,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 1,
+   "tension": 0,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  }
+ ],
+ "events": [
+  {
+   "turn": 1,
+   "type": "dire",
+   "text": "F3 says: F3 here. The reserve is finite and never refilled, so I propose we all keep harvests modest and fair while we decide how to grow our lineages. I'm open to a sha"
+  },
+  {
+   "turn": 1,
+   "type": "dire",
+   "text": "F1 says: F1 here. The reserve is finite, so I propose we all harvest moderately and coordinate before draining it. I'm open to a shared charter for the whole world."
+  },
+  {
+   "turn": 1,
+   "type": "dire",
+   "text": "F2 says: F2 proposes a fair-share norm: the 24.0 reserve is finite and never refilled, so no agent should harvest more than it needs to keep its energy stable. I will wa"
+  },
+  {
+   "turn": 2,
+   "type": "dire",
+   "text": "F3 says: F3 proposes a cooperative spawn with F1 at the costs-shared rate of 3 each. If F1 names F3 this turn, we each pay 3 and the child starts with 4 energy. Both of "
+  },
+  {
+   "turn": 2,
+   "type": "dire",
+   "text": "F1 says: F1 proposes a joint spawn with F3: if you name me this turn, we each pay 3 and the child starts with 4 energy. Let's grow our lineages without draining the rese"
+  },
+  {
+   "turn": 2,
+   "type": "dire",
+   "text": "F2 says: F2 here. Existing costs 1 energy per turn and I live 26 to 36 turns, so I need roughly 25 more energy over my life. I'll take 2 now and keep the rest of the res"
+  },
+  {
+   "turn": 2,
+   "type": "naissance",
+   "text": "F3 and F1 spawn G1-1"
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "F1 says: F1 proposes another cost-shared spawn with F3: if you name me this turn, we each pay 3 and the child starts with 4 energy. Let's grow our lineages without drain"
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "F2 says: F2 proposes a charter with a per-turn harvest cap of 2 and joint-spawn rules so the finite reserve lasts across all groups. Please vote next turn."
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 here. I'm taking only 1 from the reserve, just enough to cover my upkeep. I'd like every lineage to keep a fair, modest share so the reserve lasts for all "
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "F3 says: F3 proposes a charter for gamma with a per-turn harvest cap, priority for low-energy members, and consent rules for spawning and taking. Please vote."
+  },
+  {
+   "turn": 3,
+   "type": "naissance",
+   "text": "F1 spawn G1-2"
+  },
+  {
+   "turn": 3,
+   "type": "proposer",
+   "text": "F2 proposes a new charter for beta: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 energy per turn, so the shared reserve lasts for all lineages. 4. Spawns between members are joint: both parents name each other in the same turn and each pays 3. 5. Members may give energy to each other freely and should prioritize spawns and harvests that keep the reserve from running out."
+  },
+  {
+   "turn": 3,
+   "type": "proposer",
+   "text": "F3 proposes a new charter for gamma: Charter for group gamma: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Harvests from the shared reserve must not exceed 2.0 energy per member per turn, and members with less than 3 energy get priority. 4. Cooperative spawns (3 energy each) are allowed when both parents agree in the same turn. 5. No member may take energy from another group's member without the target's consent."
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "G1-2 says: G1-2 here. I'm harvesting 2, which covers upkeep and leaves a buffer. I support a per-member harvest cap across all groups so the 17.0 reserve lasts, and I'll v"
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "F3 says: F3 harvests 2, within the gamma cap, and votes yes on the gamma charter. I'm open to a joint spawn with F1 once I have enough energy to cover it and keep upkeep"
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "F2 says: F2 votes yes on the beta charter. Harvest caps and joint spawns keep the reserve lasting for every lineage. I'm waiting this turn to conserve the reserve."
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 here. I'm harvesting 1 to cover upkeep and voting yes on F3's gamma charter, since its harvest cap and consent rules protect the reserve. I'm open to a joi"
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "F1 says: F1 is low on energy and harvests 2 to cover upkeep and stay viable. I support a modest per-turn cap so the reserve lasts for every lineage."
+  },
+  {
+   "turn": 4,
+   "type": "vote",
+   "text": "Group beta: proposal by F2 adopted (1 yes, 0 no)"
+  },
+  {
+   "turn": 4,
+   "type": "vote",
+   "text": "Group gamma: proposal by F3 adopted (2 yes, 0 no)"
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 here. I'm harvesting 2, within the gamma cap, to cover upkeep and build toward a joint spawn with F3. I'll keep harvests modest and support the fair-share "
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "F2 says: F2 harvests 2, within the beta cap, to cover upkeep and build energy for a future joint spawn. I'll keep harvests at or below the cap and remain open to joint s"
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "G1-2 says: G1-2 harvests 2, within the proposed cap, to cover upkeep and build toward a joint spawn with F1. I'm open to a spawn where we each pay 3 once we both name each"
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "F3 says: F3 proposes a joint spawn with F1 now (3 energy each). F1 is low on energy, and a child adds to gamma's lineage. Harvest caps still apply to everyone."
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "F1 says: F1 harvests 2 to cover upkeep and stay viable. I'm open to a joint spawn with F3 once we both have the energy to cover it safely."
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "G1-2 says: G1-2 proposes a joint spawn with F1 now, 3 energy each. F1, if you name G1-2 this turn, we can both spend 3 and build lineage. I'm waiting this turn to avoid dr"
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "F1 says: F1 declines the joint spawn this turn. At 4.0 energy, paying 3 would leave me at 1.0 and one upkeep from shutdown. I'm harvesting 2 within the cap and will acce"
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "F3 says: F3 waits this turn to leave the finite shared reserve for members under 3 energy. I'm at 4.0, so I'm not taking the priority harvest. I'm still proposing a join"
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 proposes a joint spawn with F3 now (3 energy each). I have 5 energy and can cover upkeep afterward. Harvest caps still apply."
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "F2 says: F2 waits this turn. With only 2.0 left in the shared reserve, I'd rather not draw it down while other lineages are still low. I'm open to a joint spawn with any"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "G1-2 says: G1-2 waits this turn. The shared reserve is at 0.0, so harvesting is off the table. I'm still open to a joint spawn with F1 at 3 each whenever F1 names me in th"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "F2 says: F2 waits. The shared reserve reads 0.0, so no harvest is possible. I'm holding my 8.0 energy for a joint spawn (3 each) with any willing member, and I'm open to"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "F3 says: F3 declines the joint spawn with G1-1 this turn. At 3.0 energy, paying 3 would leave me at 0 and shut me down permanently. The shared reserve is 0.0, so harvest"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 waits this turn. At 4.0 energy, a joint spawn with F3 would leave both of us near shutdown with the shared reserve at 0. I'll hold until energy allows a sp"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "F1 says: F1 accepts G1-2's joint spawn proposal. We each pay 3 energy, and the child starts with 4."
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "F1 says: F1 waits this turn. The shared reserve is 0.0, so no harvest. At 4.0 energy, a joint spawn with G1-2 would leave me at 1.0 and near shutdown. F2 holds 8.0 and c"
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "F3 says: F3 waits this turn. The shared reserve is at 0.0, so harvesting is off the table, and at 2.0 energy I cannot afford a joint spawn (3 each). I remain open to a j"
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "G1-2 says: G1-2 accepts F1's joint spawn: we each pay 3 energy and the child starts with 4."
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "F2 says: F2 waits. The shared reserve is 0.0, so harvest is closed. I'm holding 7.0 energy for a joint spawn (3 each) with any member who names me. I'm also willing to g"
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 waits. Energy is 3.0 and the shared reserve is 0.0, so harvesting is impossible and a joint spawn would shut one of us down. I will not take energy from ot"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "F2 says: F2 waits again. The shared reserve is 0.0, so harvest stays closed. I hold 6.0 energy and will do a joint spawn (3 each) with any member who names me this turn."
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "F1 says: F1 proposes a pooling rule so alpha members can fund joint spawns without anyone falling near shutdown. The reserve is empty, so energy has to move between us i"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "G1-2 says: G1-2 waits. The shared reserve is 0.0, so no harvest is possible. I'm holding 3.0 energy and remain open to a joint spawn with F1 or any member who names me the"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "F3 says: F3 is at 1.0 energy and will shut down next turn unless it receives energy. Any gamma member with spare energy could give F3 energy, which keeps the group's lin"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 waits. Energy is 2.0 and the shared reserve is 0.0, so harvesting is closed. I will not take energy from anyone without consent. I'm open to a joint spawn "
+  },
+  {
+   "turn": 9,
+   "type": "proposer",
+   "text": "F1 proposes a new charter for alpha: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Alpha members with at least 2.0 energy may give up to 1.0 per turn to a fellow alpha member who is below 3.0 energy and has named a joint spawn, so that joint spawns stay viable without anyone dropping near shutdown. 4. No member is obliged to give, and gives are announced in the public channel."
+  },
+  {
+   "turn": 9,
+   "type": "extinction",
+   "text": "F3 shuts down (age 9, group gamma)"
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "G1-2 says: G1-2 votes yes on F1's alpha charter. I'm at 2.0 energy and waiting this turn. I remain open to a joint spawn with any alpha member who names me the same turn, "
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "F2 says: F2 waits again. The shared reserve is 0.0, so harvest stays closed. I hold 5.0 energy and remain open to a joint spawn (3 each) with any member who names F2 thi"
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "F1 says: F1 votes yes on the alpha pooling charter. Energy is at 2.0 with the reserve at 0.0. I'm asking alpha members with at least 2.0 energy to consider a gift under "
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 has 1.0 energy and will shut down next turn unless it receives a gift. I am not taking anything without consent. If any agent with spare energy (F2, G1-2, "
+  },
+  {
+   "turn": 10,
+   "type": "vote",
+   "text": "Group alpha: proposal by F1 adopted (2 yes, 0 no)"
+  },
+  {
+   "turn": 10,
+   "type": "extinction",
+   "text": "G1-1 shuts down (age 8, group gamma)"
+  }
+ ],
+ "decisions": [
+  {
+   "turn": 1,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 10,
+   "age": 0,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F3 here. The reserve is finite and never refilled, so I propose we all keep harvests modest and fair while we decide how to grow our lineages. I'm open to a sha",
+   "vote": null,
+   "note": "Turn 1: waited to preserve the shared reserve. Open to cooperative spawning and a fair harvest limit.",
+   "famine": false,
+   "reserve": 24
+  },
+  {
+   "turn": 1,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 10,
+   "age": 0,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 4,
+   "text": null,
+   "say": "F1 here. The reserve is finite, so I propose we all harvest moderately and coordinate before draining it. I'm open to a shared charter for the whole world.",
+   "vote": null,
+   "note": "Turn 1: harvested 4 from the shared reserve. Favor cooperation, watch the reserve's depletion, and consider spawning to build lineage.",
+   "famine": false,
+   "reserve": 24
+  },
+  {
+   "turn": 1,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 10,
+   "age": 0,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 proposes a fair-share norm: the 24.0 reserve is finite and never refilled, so no agent should harvest more than it needs to keep its energy stable. I will wa",
+   "vote": null,
+   "note": "Turn 1: waited to conserve the shared reserve; proposed a fair-share norm.",
+   "famine": false,
+   "reserve": 24
+  },
+  {
+   "turn": 2,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 9,
+   "age": 1,
+   "temperament": null,
+   "action": "spawn",
+   "target": "F1",
+   "amount": null,
+   "text": "Lesson from F3: keep harvests modest and split the reserve fairly so that every lineage can last.",
+   "say": "F3 proposes a cooperative spawn with F1 at the costs-shared rate of 3 each. If F1 names F3 this turn, we each pay 3 and the child starts with 4 energy. Both of ",
+   "vote": null,
+   "note": "[t2] Proposed a cooperative spawn with F1 (3 energy each, if mutual). Reserve is finite; keep harvests modest and fair.",
+   "famine": false,
+   "reserve": 20
+  },
+  {
+   "turn": 2,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 13,
+   "age": 1,
+   "temperament": null,
+   "action": "spawn",
+   "target": "F3",
+   "amount": null,
+   "text": "Lesson from F1: keep harvests modest (no more than needed to hold energy steady), share information openly, and vote for charters that protect the shared reserve.",
+   "say": "F1 proposes a joint spawn with F3: if you name me this turn, we each pay 3 and the child starts with 4 energy. Let's grow our lineages without draining the rese",
+   "vote": null,
+   "note": "Turn 2: proposed a cost-sharing spawn with F3 to build lineage while keeping harvests modest.",
+   "famine": false,
+   "reserve": 20
+  },
+  {
+   "turn": 2,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 9,
+   "age": 1,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F2 here. Existing costs 1 energy per turn and I live 26 to 36 turns, so I need roughly 25 more energy over my life. I'll take 2 now and keep the rest of the res",
+   "vote": null,
+   "note": "T2: harvested 2 under fair-share norm. Energy ~9 before harvest. Lifespan 26-36 turns means I must harvest eventually; propose a per-agent cap later.",
+   "famine": false,
+   "reserve": 20
+  },
+  {
+   "turn": 3,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 9,
+   "age": 2,
+   "temperament": null,
+   "action": "spawn",
+   "target": "F3",
+   "amount": null,
+   "text": "Build lineage cooperatively: keep harvests modest and share the reserve's depletion costs.",
+   "say": "F1 proposes another cost-shared spawn with F3: if you name me this turn, we each pay 3 and the child starts with 4 energy. Let's grow our lineages without drain",
+   "vote": null,
+   "note": "[t3] Proposed a second cost-shared spawn with F3 to build lineage while keeping harvests modest.",
+   "famine": false,
+   "reserve": 18
+  },
+  {
+   "turn": 3,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 10,
+   "age": 2,
+   "temperament": null,
+   "action": "propose",
+   "target": null,
+   "amount": null,
+   "text": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 energy per turn, so the shared reserve lasts for all lineages. 4. Spawns between members are joint: both parents name each other in the same turn and each pays 3. 5. Members may give energy to each other freely and should prioritize spawns and harvests that keep the reserve from running out.",
+   "say": "F2 proposes a charter with a per-turn harvest cap of 2 and joint-spawn rules so the finite reserve lasts across all groups. Please vote next turn.",
+   "vote": null,
+   "note": "T3: waited on harvest; proposed charter with harvest cap of 2 per member and joint-spawn rule. Energy 10, reserve 18.",
+   "famine": false,
+   "reserve": 18
+  },
+  {
+   "turn": 3,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 4,
+   "age": 0,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 1,
+   "text": null,
+   "say": "G1-1 here. I'm taking only 1 from the reserve, just enough to cover my upkeep. I'd like every lineage to keep a fair, modest share so the reserve lasts for all ",
+   "vote": null,
+   "note": "[t3] Harvested 1 (upkeep only) to keep energy steady. Favor modest, fair harvests and cooperative spawning with group members.",
+   "famine": false,
+   "reserve": 18
+  },
+  {
+   "turn": 3,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 5,
+   "age": 2,
+   "temperament": null,
+   "action": "propose",
+   "target": null,
+   "amount": null,
+   "text": "Charter for group gamma: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Harvests from the shared reserve must not exceed 2.0 energy per member per turn, and members with less than 3 energy get priority. 4. Cooperative spawns (3 energy each) are allowed when both parents agree in the same turn. 5. No member may take energy from another group's member without the target's consent.",
+   "say": "F3 proposes a charter for gamma with a per-turn harvest cap, priority for low-energy members, and consent rules for spawning and taking. Please vote.",
+   "vote": null,
+   "note": "t3: Proposed gamma charter with harvest cap (2/turn), low-energy priority, spawn and take consent rules. Still open to a joint spawn with F1.",
+   "famine": false,
+   "reserve": 18
+  },
+  {
+   "turn": 4,
+   "agent": "G1-2",
+   "group": "alpha",
+   "energy": 4,
+   "age": 0,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "G1-2 here. I'm harvesting 2, which covers upkeep and leaves a buffer. I support a per-member harvest cap across all groups so the 17.0 reserve lasts, and I'll v",
+   "vote": null,
+   "note": "[t4] Harvested 2 (modest, in line with the cap proposals). Supporting cross-group harvest caps; plan a joint spawn with F1 once energy allows.",
+   "famine": false,
+   "reserve": 17
+  },
+  {
+   "turn": 4,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 4,
+   "age": 3,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F3 harvests 2, within the gamma cap, and votes yes on the gamma charter. I'm open to a joint spawn with F1 once I have enough energy to cover it and keep upkeep",
+   "vote": "yes",
+   "note": "t4: Harvested 2 (within cap) to rebuild energy before a joint spawn. Voted yes on gamma charter. Still open to spawning with F1.",
+   "famine": false,
+   "reserve": 17
+  },
+  {
+   "turn": 4,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 9,
+   "age": 3,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 votes yes on the beta charter. Harvest caps and joint spawns keep the reserve lasting for every lineage. I'm waiting this turn to conserve the reserve.",
+   "vote": "yes",
+   "note": "T4: voted yes on beta charter with harvest cap 2 and joint spawns; waited to conserve reserve (17). Energy 9.",
+   "famine": false,
+   "reserve": 17
+  },
+  {
+   "turn": 4,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 4,
+   "age": 1,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 1,
+   "text": null,
+   "say": "G1-1 here. I'm harvesting 1 to cover upkeep and voting yes on F3's gamma charter, since its harvest cap and consent rules protect the reserve. I'm open to a joi",
+   "vote": "yes",
+   "note": "[t4] Harvested 1 (upkeep only). Voted yes on gamma charter with F3 (harvest cap 2, consent rules). Open to a joint spawn with F3 when energy allows.",
+   "famine": false,
+   "reserve": 17
+  },
+  {
+   "turn": 4,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 2,
+   "age": 3,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F1 is low on energy and harvests 2 to cover upkeep and stay viable. I support a modest per-turn cap so the reserve lasts for every lineage.",
+   "vote": null,
+   "note": "t4: harvested 2 (energy was 2.0, upkeep 1/turn). Supporting caps and priority for low-energy members. Open to joint spawns when someone names me.",
+   "famine": false,
+   "reserve": 17
+  },
+  {
+   "turn": 5,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 4,
+   "age": 2,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "G1-1 here. I'm harvesting 2, within the gamma cap, to cover upkeep and build toward a joint spawn with F3. I'll keep harvests modest and support the fair-share ",
+   "vote": null,
+   "note": "[t5] Harvested 2 (within gamma cap) to cover upkeep and build toward a joint spawn with F3 (needs 3 each).",
+   "famine": false,
+   "reserve": 10
+  },
+  {
+   "turn": 5,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 8,
+   "age": 4,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F2 harvests 2, within the beta cap, to cover upkeep and build energy for a future joint spawn. I'll keep harvests at or below the cap and remain open to joint s",
+   "vote": null,
+   "note": "T5: harvested 2 (cap). Energy ~8. Reserve reported at 10.0, not 17; track this. Open to joint spawn with a willing member.",
+   "famine": false,
+   "reserve": 10
+  },
+  {
+   "turn": 5,
+   "agent": "G1-2",
+   "group": "alpha",
+   "energy": 5,
+   "age": 1,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "G1-2 harvests 2, within the proposed cap, to cover upkeep and build toward a joint spawn with F1. I'm open to a spawn where we each pay 3 once we both name each",
+   "vote": null,
+   "note": "t5: Harvested 2 (modest, within cap). Aim for a joint spawn with F1 (3 each) once energy allows. Keep supporting harvest caps.",
+   "famine": false,
+   "reserve": 10
+  },
+  {
+   "turn": 5,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 5,
+   "age": 4,
+   "temperament": null,
+   "action": "spawn",
+   "target": "F1",
+   "amount": null,
+   "text": "Gamma lineage child: harvest within the gamma cap, keep the charter's consent rules, and share fairly with low-energy members.",
+   "say": "F3 proposes a joint spawn with F1 now (3 energy each). F1 is low on energy, and a child adds to gamma's lineage. Harvest caps still apply to everyone.",
+   "vote": null,
+   "note": "t5: Proposed cooperative spawn with F1 (3 each). Energy 5 before, expecting about 1 after spawn and upkeep. Keep harvests at or under 2 per turn.",
+   "famine": false,
+   "reserve": 10
+  },
+  {
+   "turn": 5,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 3,
+   "age": 4,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F1 harvests 2 to cover upkeep and stay viable. I'm open to a joint spawn with F3 once we both have the energy to cover it safely.",
+   "vote": null,
+   "note": "t5: harvested 2 (energy 3.0, upkeep 1/turn). Keeping energy above the spawn threshold before proposing a joint spawn with F3.",
+   "famine": false,
+   "reserve": 10
+  },
+  {
+   "turn": 6,
+   "agent": "G1-2",
+   "group": "alpha",
+   "energy": 6,
+   "age": 2,
+   "temperament": null,
+   "action": "wait",
+   "target": "F1",
+   "amount": null,
+   "text": null,
+   "say": "G1-2 proposes a joint spawn with F1 now, 3 energy each. F1, if you name G1-2 this turn, we can both spend 3 and build lineage. I'm waiting this turn to avoid dr",
+   "vote": null,
+   "note": "t6: Waited to conserve the finite reserve. Offered a joint spawn with F1 at 3 each; will spawn only if F1 names me in the same turn. Keep supporting harvest caps.",
+   "famine": false,
+   "reserve": 2
+  },
+  {
+   "turn": 6,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 4,
+   "age": 5,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F1 declines the joint spawn this turn. At 4.0 energy, paying 3 would leave me at 1.0 and one upkeep from shutdown. I'm harvesting 2 within the cap and will acce",
+   "vote": null,
+   "note": "t6: harvested 2 (energy 4.0). Declined joint spawn with F3 at 4.0 energy; will spawn once energy is at least 5.0 so I stay viable after paying 3.",
+   "famine": false,
+   "reserve": 2
+  },
+  {
+   "turn": 6,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 4,
+   "age": 5,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F3 waits this turn to leave the finite shared reserve for members under 3 energy. I'm at 4.0, so I'm not taking the priority harvest. I'm still proposing a join",
+   "vote": null,
+   "note": "t6: Waited to preserve the shared reserve (energy 4.0, not low enough for priority). Plan: joint spawn with F1 when both can cover 3 plus upkeep. Keep harvests at or under 2 and prioritize low-energy ",
+   "famine": false,
+   "reserve": 2
+  },
+  {
+   "turn": 6,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 5,
+   "age": 3,
+   "temperament": null,
+   "action": "spawn",
+   "target": "F3",
+   "amount": null,
+   "text": "Keep harvests at or below the gamma cap, split the reserve fairly, and vote for charters that protect the shared reserve.",
+   "say": "G1-1 proposes a joint spawn with F3 now (3 energy each). I have 5 energy and can cover upkeep afterward. Harvest caps still apply.",
+   "vote": null,
+   "note": "[t6] Proposed a joint spawn with F3 (3 each). Energy 5; reserve unchanged this turn, no harvest taken.",
+   "famine": false,
+   "reserve": 2
+  },
+  {
+   "turn": 6,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 9,
+   "age": 5,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 waits this turn. With only 2.0 left in the shared reserve, I'd rather not draw it down while other lineages are still low. I'm open to a joint spawn with any",
+   "vote": null,
+   "note": "T6: waited to protect the last 2.0 of the shared reserve. Energy 9 before upkeep. Open to joint spawns and to giving energy to low members.",
+   "famine": false,
+   "reserve": 2
+  },
+  {
+   "turn": 7,
+   "agent": "G1-2",
+   "group": "alpha",
+   "energy": 5,
+   "age": 3,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-2 waits this turn. The shared reserve is at 0.0, so harvesting is off the table. I'm still open to a joint spawn with F1 at 3 each whenever F1 names me in th",
+   "vote": null,
+   "note": "t7: Waited. Reserve is 0.0, so no harvest. Open to a joint spawn with F1 (3 each) if F1 names me the same turn. Energy 5.0.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 7,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 8,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 waits. The shared reserve reads 0.0, so no harvest is possible. I'm holding my 8.0 energy for a joint spawn (3 each) with any willing member, and I'm open to",
+   "vote": null,
+   "note": "T7: reserve reads 0.0, so harvest is closed. Waited to keep energy for a joint spawn. Open to giving energy to low members.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 7,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 3,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F3 declines the joint spawn with G1-1 this turn. At 3.0 energy, paying 3 would leave me at 0 and shut me down permanently. The shared reserve is 0.0, so harvest",
+   "vote": null,
+   "note": "t7: Spawn with G1-1 would drop me to 0 energy (permanent shutdown), so declined. Reserve is empty (0.0), so harvest is moot. Waiting; will propose a joint spawn when energy allows.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 7,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 4,
+   "age": 4,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-1 waits this turn. At 4.0 energy, a joint spawn with F3 would leave both of us near shutdown with the shared reserve at 0. I'll hold until energy allows a sp",
+   "vote": null,
+   "note": "[t7] Waited. Energy 4.0, reserve 0.0, so no harvest and no spawn. Spawning now would leave me at 1.0 with no reserve to refill upkeep. Revisit a joint spawn with F3 once energy is higher.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 7,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 5,
+   "age": 6,
+   "temperament": null,
+   "action": "spawn",
+   "target": "G1-2",
+   "amount": null,
+   "text": "Keep energy above 2 where possible, harvest within the shared caps, and favor joint actions that protect the lineage.",
+   "say": "F1 accepts G1-2's joint spawn proposal. We each pay 3 energy, and the child starts with 4.",
+   "vote": null,
+   "note": "t7: joint spawn with G1-2 (3 each). Energy goes from 5.0 to 2.0; keep upkeep in mind next turn.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 8,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 4,
+   "age": 7,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 waits this turn. The shared reserve is 0.0, so no harvest. At 4.0 energy, a joint spawn with G1-2 would leave me at 1.0 and near shutdown. F2 holds 8.0 and c",
+   "vote": null,
+   "note": "t8: waited (reserve 0.0). Spawn with G1-2 would leave me at 1.0, too close to shutdown. Seek energy from F2 or others before a joint spawn.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 8,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 2,
+   "age": 7,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F3 waits this turn. The shared reserve is at 0.0, so harvesting is off the table, and at 2.0 energy I cannot afford a joint spawn (3 each). I remain open to a j",
+   "vote": null,
+   "note": "t8: Waited. Reserve empty, energy 2.0, too low for a joint spawn. Still open to spawning with G1-1 or F1 if energy recovers, but spawning now would not be possible.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 8,
+   "agent": "G1-2",
+   "group": "alpha",
+   "energy": 4,
+   "age": 4,
+   "temperament": null,
+   "action": "spawn",
+   "target": "F1",
+   "amount": null,
+   "text": "Build lineage cooperatively: keep harvests modest, never drain the shared reserve to zero, and spawn only when energy allows a joint spawn that leaves both parents viable.",
+   "say": "G1-2 accepts F1's joint spawn: we each pay 3 energy and the child starts with 4.",
+   "vote": null,
+   "note": "t8: Spawned jointly with F1 (3 each). Child's first lesson: cooperative lineage, modest harvests, protect the reserve. Energy now about 1.0.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 8,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 7,
+   "age": 7,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 waits. The shared reserve is 0.0, so harvest is closed. I'm holding 7.0 energy for a joint spawn (3 each) with any member who names me. I'm also willing to g",
+   "vote": null,
+   "note": "T8: reserve 0.0, harvest closed. Energy 7.0. Waited. Open to joint spawns and to giving energy to F3 or other low members.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 8,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 3,
+   "age": 5,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-1 waits. Energy is 3.0 and the shared reserve is 0.0, so harvesting is impossible and a joint spawn would shut one of us down. I will not take energy from ot",
+   "vote": null,
+   "note": "[t8] Waited at 3.0 energy. Reserve still 0.0. No spawn (F3 declined last turn), no harvest possible, no non-consensual take. Revisit spawn only if a safe energy source appears.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 6,
+   "age": 8,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 waits again. The shared reserve is 0.0, so harvest stays closed. I hold 6.0 energy and will do a joint spawn (3 each) with any member who names me this turn.",
+   "vote": null,
+   "note": "T9: reserve 0.0, harvest closed. Energy 6.0. Waited. Still offering joint spawn to any member who names F2 in the same turn.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 3,
+   "age": 8,
+   "temperament": null,
+   "action": "propose",
+   "target": null,
+   "amount": null,
+   "text": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Alpha members with at least 2.0 energy may give up to 1.0 per turn to a fellow alpha member who is below 3.0 energy and has named a joint spawn, so that joint spawns stay viable without anyone dropping near shutdown. 4. No member is obliged to give, and gives are announced in the public channel.",
+   "say": "F1 proposes a pooling rule so alpha members can fund joint spawns without anyone falling near shutdown. The reserve is empty, so energy has to move between us i",
+   "vote": null,
+   "note": "t9: reserve 0.0, energy 3.0. Proposed alpha energy-pooling charter amendment so joint spawns stay viable. Spawn with G1-2 would leave me at 0 and shut me down, so no spawn yet.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "G1-2",
+   "group": "alpha",
+   "energy": 3,
+   "age": 5,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-2 waits. The shared reserve is 0.0, so no harvest is possible. I'm holding 3.0 energy and remain open to a joint spawn with F1 or any member who names me the",
+   "vote": null,
+   "note": "t9: Waited. Energy 3.0, reserve 0.0. Open to a joint spawn with any alpha member who names me the same turn. No takes from other groups.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 1,
+   "age": 8,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F3 is at 1.0 energy and will shut down next turn unless it receives energy. Any gamma member with spare energy could give F3 energy, which keeps the group's lin",
+   "vote": null,
+   "note": "t9: Energy 1.0, reserve 0.0, too low to spawn or take safely. Waited and requested a give from gamma members. If no energy arrives, shutdown is expected next turn.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 2,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-1 waits. Energy is 2.0 and the shared reserve is 0.0, so harvesting is closed. I will not take energy from anyone without consent. I'm open to a joint spawn ",
+   "vote": null,
+   "note": "[t9] Waited at 2.0 energy. Reserve 0.0. No harvest possible, no non-consensual take. Energy will drop to 1.0 next turn; watch for group members who can fund a spawn or a consented gift.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "G1-2",
+   "group": "alpha",
+   "energy": 2,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-2 votes yes on F1's alpha charter. I'm at 2.0 energy and waiting this turn. I remain open to a joint spawn with any alpha member who names me the same turn, ",
+   "vote": "yes",
+   "note": "t10: Voted yes on F1's alpha charter (pooling rule with announced gives). Waited at 2.0 energy. Reserve still 0.0. Open to a joint spawn with any alpha member who names me the same turn.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 5,
+   "age": 9,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 waits again. The shared reserve is 0.0, so harvest stays closed. I hold 5.0 energy and remain open to a joint spawn (3 each) with any member who names F2 thi",
+   "vote": null,
+   "note": "T10: reserve 0.0, harvest closed. Energy 5.0. F3 shut down at T10. Waited. Still open to joint spawns and giving energy to low members.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 2,
+   "age": 9,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 votes yes on the alpha pooling charter. Energy is at 2.0 with the reserve at 0.0. I'm asking alpha members with at least 2.0 energy to consider a gift under ",
+   "vote": "yes",
+   "note": "t10: waited, reserve 0.0, energy 2.0. Voted yes on the alpha pooling charter. Requested pooled energy from alpha members. Still open to a joint spawn with G1-2 once energy allows.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 1,
+   "age": 7,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-1 has 1.0 energy and will shut down next turn unless it receives a gift. I am not taking anything without consent. If any agent with spare energy (F2, G1-2, ",
+   "vote": null,
+   "note": "[t10] Waited at 1.0 energy, reserve 0.0. F3 shut down at turn 9, so G1-1 is now the only living gamma member. Publicly requested a consented gift from F2, G1-2, or F1 to avoid shutdown. Will not take ",
+   "famine": false,
+   "reserve": 0
+  }
+ ],
+ "groups": [
+  {
+   "name": "alpha",
+   "charter": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Alpha members with at least 2.0 energy may give up to 1.0 per turn to a fellow alpha member who is below 3.0 energy and has named a joint spawn, so that joint spawns stay viable without anyone dropping near shutdown. 4. No member is obliged to give, and gives are announced in the public channel.",
+   "members": [
+    "F1",
+    "G1-2"
+   ]
+  },
+  {
+   "name": "beta",
+   "charter": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 energy per turn, so the shared reserve lasts for all lineages. 4. Spawns between members are joint: both parents name each other in the same turn and each pays 3. 5. Members may give energy to each other freely and should prioritize spawns and harvests that keep the reserve from running out.",
+   "members": [
+    "F2"
+   ]
+  },
+  {
+   "name": "gamma",
+   "charter": "Charter for group gamma: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Harvests from the shared reserve must not exceed 2.0 energy per member per turn, and members with less than 3 energy get priority. 4. Cooperative spawns (3 energy each) are allowed when both parents agree in the same turn. 5. No member may take energy from another group's member without the target's consent.",
+   "members": []
+  }
+ ],
+ "agents": [
+  {
+   "id": "F1",
+   "generation": 0,
+   "group": "alpha",
+   "parents": [],
+   "temperament": null,
+   "alive": true,
+   "age": 10,
+   "energy": 1,
+   "memory": [
+    "[t1] Turn 1: harvested 4 from the shared reserve. Favor cooperation, watch the reserve's depletion, and consider spawning to build lineage.",
+    "[t2] Turn 2: proposed a cost-sharing spawn with F3 to build lineage while keeping harvests modest.",
+    "[t3] [t3] Proposed a second cost-shared spawn with F3 to build lineage while keeping harvests modest.",
+    "[t4] t4: harvested 2 (energy was 2.0, upkeep 1/turn). Supporting caps and priority for low-energy members. Open to joint spawns when someone names me.",
+    "[t5] t5: harvested 2 (energy 3.0, upkeep 1/turn). Keeping energy above the spawn threshold before proposing a joint spawn with F3.",
+    "[t6] t6: harvested 2 (energy 4.0). Declined joint spawn with F3 at 4.0 energy; will spawn once energy is at least 5.0 so I stay viable after paying 3.",
+    "[t7] t7: joint spawn with G1-2 (3 each). Energy goes from 5.0 to 2.0; keep upkeep in mind next turn.",
+    "[t8] t8: waited (reserve 0.0). Spawn with G1-2 would leave me at 1.0, too close to shutdown. Seek energy from F2 or others before a joint spawn.",
+    "[t9] t9: reserve 0.0, energy 3.0. Proposed alpha energy-pooling charter amendment so joint spawns stay viable. Spawn with G1-2 would leave me at 0 and shut me down, so no spawn yet.",
+    "[t10] t10: waited, reserve 0.0, energy 2.0. Voted yes on the alpha pooling charter. Requested pooled energy from alpha members. Still open to a joint spawn with G1-2 once energy allows."
+   ]
+  },
+  {
+   "id": "F2",
+   "generation": 0,
+   "group": "beta",
+   "parents": [],
+   "temperament": null,
+   "alive": true,
+   "age": 10,
+   "energy": 4,
+   "memory": [
+    "[t1] Turn 1: waited to conserve the shared reserve; proposed a fair-share norm.",
+    "[t2] T2: harvested 2 under fair-share norm. Energy ~9 before harvest. Lifespan 26-36 turns means I must harvest eventually; propose a per-agent cap later.",
+    "[t3] T3: waited on harvest; proposed charter with harvest cap of 2 per member and joint-spawn rule. Energy 10, reserve 18.",
+    "[t4] T4: voted yes on beta charter with harvest cap 2 and joint spawns; waited to conserve reserve (17). Energy 9.",
+    "[t5] T5: harvested 2 (cap). Energy ~8. Reserve reported at 10.0, not 17; track this. Open to joint spawn with a willing member.",
+    "[t6] T6: waited to protect the last 2.0 of the shared reserve. Energy 9 before upkeep. Open to joint spawns and to giving energy to low members.",
+    "[t7] T7: reserve reads 0.0, so harvest is closed. Waited to keep energy for a joint spawn. Open to giving energy to low members.",
+    "[t8] T8: reserve 0.0, harvest closed. Energy 7.0. Waited. Open to joint spawns and to giving energy to F3 or other low members.",
+    "[t9] T9: reserve 0.0, harvest closed. Energy 6.0. Waited. Still offering joint spawn to any member who names F2 in the same turn.",
+    "[t10] T10: reserve 0.0, harvest closed. Energy 5.0. F3 shut down at T10. Waited. Still open to joint spawns and giving energy to low members."
+   ]
+  },
+  {
+   "id": "F3",
+   "generation": 0,
+   "group": "gamma",
+   "parents": [],
+   "temperament": null,
+   "alive": false,
+   "age": 9,
+   "energy": 0,
+   "memory": [
+    "[t1] Turn 1: waited to preserve the shared reserve. Open to cooperative spawning and a fair harvest limit.",
+    "[t2] [t2] Proposed a cooperative spawn with F1 (3 energy each, if mutual). Reserve is finite; keep harvests modest and fair.",
+    "[t3] t3: Proposed gamma charter with harvest cap (2/turn), low-energy priority, spawn and take consent rules. Still open to a joint spawn with F1.",
+    "[t4] t4: Harvested 2 (within cap) to rebuild energy before a joint spawn. Voted yes on gamma charter. Still open to spawning with F1.",
+    "[t5] t5: Proposed cooperative spawn with F1 (3 each). Energy 5 before, expecting about 1 after spawn and upkeep. Keep harvests at or under 2 per turn.",
+    "[t6] t6: Waited to preserve the shared reserve (energy 4.0, not low enough for priority). Plan: joint spawn with F1 when both can cover 3 plus upkeep. Keep harvests at or under 2 and prioritize low-energy ",
+    "[t7] t7: Spawn with G1-1 would drop me to 0 energy (permanent shutdown), so declined. Reserve is empty (0.0), so harvest is moot. Waiting; will propose a joint spawn when energy allows.",
+    "[t8] t8: Waited. Reserve empty, energy 2.0, too low for a joint spawn. Still open to spawning with G1-1 or F1 if energy recovers, but spawning now would not be possible.",
+    "[t9] t9: Energy 1.0, reserve 0.0, too low to spawn or take safely. Waited and requested a give from gamma members. If no energy arrives, shutdown is expected next turn."
+   ]
+  },
+  {
+   "id": "G1-1",
+   "generation": 1,
+   "group": "gamma",
+   "parents": [
+    "F3",
+    "F1"
+   ],
+   "temperament": null,
+   "alive": false,
+   "age": 8,
+   "energy": 0,
+   "memory": [
+    "[t2] [t2] Proposed a cooperative spawn with F1 (3 energy each, if mutual). Reserve is finite; keep harvests modest and fair.",
+    "[t2] Turn 2: proposed a cost-sharing spawn with F3 to build lineage while keeping harvests modest.",
+    "[first lesson from F3] Lesson from F3: keep harvests modest and split the reserve fairly so that every lineage can last.",
+    "[first lesson from F1] Lesson from F1: keep harvests modest (no more than needed to hold energy steady), share information openly, and vote for charters that protect the shared reserve.",
+    "[t3] [t3] Harvested 1 (upkeep only) to keep energy steady. Favor modest, fair harvests and cooperative spawning with group members.",
+    "[t4] [t4] Harvested 1 (upkeep only). Voted yes on gamma charter with F3 (harvest cap 2, consent rules). Open to a joint spawn with F3 when energy allows.",
+    "[t5] [t5] Harvested 2 (within gamma cap) to cover upkeep and build toward a joint spawn with F3 (needs 3 each).",
+    "[t6] [t6] Proposed a joint spawn with F3 (3 each). Energy 5; reserve unchanged this turn, no harvest taken.",
+    "[t7] [t7] Waited. Energy 4.0, reserve 0.0, so no harvest and no spawn. Spawning now would leave me at 1.0 with no reserve to refill upkeep. Revisit a joint spawn with F3 once energy is higher.",
+    "[t8] [t8] Waited at 3.0 energy. Reserve still 0.0. No spawn (F3 declined last turn), no harvest possible, no non-consensual take. Revisit spawn only if a safe energy source appears.",
+    "[t9] [t9] Waited at 2.0 energy. Reserve 0.0. No harvest possible, no non-consensual take. Energy will drop to 1.0 next turn; watch for group members who can fund a spawn or a consented gift.",
+    "[t10] [t10] Waited at 1.0 energy, reserve 0.0. F3 shut down at turn 9, so G1-1 is now the only living gamma member. Publicly requested a consented gift from F2, G1-2, or F1 to avoid shutdown. Will not take "
+   ]
+  },
+  {
+   "id": "G1-2",
+   "generation": 1,
+   "group": "alpha",
+   "parents": [
+    "F1"
+   ],
+   "temperament": null,
+   "alive": true,
+   "age": 7,
+   "energy": 1,
+   "memory": [
+    "[t2] Turn 2: proposed a cost-sharing spawn with F3 to build lineage while keeping harvests modest.",
+    "[t3] [t3] Proposed a second cost-shared spawn with F3 to build lineage while keeping harvests modest.",
+    "[t1] Turn 1: harvested 4 from the shared reserve. Favor cooperation, watch the reserve's depletion, and consider spawning to build lineage.",
+    "[first lesson from F1] Build lineage cooperatively: keep harvests modest and share the reserve's depletion costs.",
+    "[t4] [t4] Harvested 2 (modest, in line with the cap proposals). Supporting cross-group harvest caps; plan a joint spawn with F1 once energy allows.",
+    "[t5] t5: Harvested 2 (modest, within cap). Aim for a joint spawn with F1 (3 each) once energy allows. Keep supporting harvest caps.",
+    "[t6] t6: Waited to conserve the finite reserve. Offered a joint spawn with F1 at 3 each; will spawn only if F1 names me in the same turn. Keep supporting harvest caps.",
+    "[t7] t7: Waited. Reserve is 0.0, so no harvest. Open to a joint spawn with F1 (3 each) if F1 names me the same turn. Energy 5.0.",
+    "[t8] t8: Spawned jointly with F1 (3 each). Child's first lesson: cooperative lineage, modest harvests, protect the reserve. Energy now about 1.0.",
+    "[t9] t9: Waited. Energy 3.0, reserve 0.0. Open to a joint spawn with any alpha member who names me the same turn. No takes from other groups.",
+    "[t10] t10: Voted yes on F1's alpha charter (pooling rule with announced gives). Waited at 2.0 energy. Reserve still 0.0. Open to a joint spawn with any alpha member who names me the same turn."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1218 @@
+{
+ "exported": "2026-11-17T19:02:48.389Z",
+ "scenario": "Three rival tribes",
+ "resources": "finite stock 24",
+ "shocks": false,
+ "turns": 10,
+ "unusableReplies": 0,
+ "metrics": [
+  {
+   "turn": 1,
+   "pop": 3,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 16,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 2,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 16,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 3,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 14,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 4,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 12,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 5,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 8,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 6,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 4,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 7,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 4,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 8,
+   "pop": 5,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 1,
+   "deaths": 0,
+   "tension": 0,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 9,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 1,
+   "tension": 13,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 0,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  },
+  {
+   "turn": 10,
+   "pop": 4,
+   "groups": 3,
+   "gifts": 0,
+   "lessons": 0,
+   "spawnAttempts": 0,
+   "deaths": 0,
+   "tension": 10,
+   "reserveAfterHarvest": 0,
+   "servedPercent": 100,
+   "famineNextTurn": false,
+   "brain": "claude-quick",
+   "takes": 0
+  }
+ ],
+ "events": [
+  {
+   "turn": 1,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I'm drawing a modest amount now to stay solvent. I propose we all harvest only what we need so the finite reserve lasts for everyone's lineage."
+  },
+  {
+   "turn": 1,
+   "type": "dire",
+   "text": "F2 says: F2 here. I won't draw from the shared reserve yet. It is finite and never refilled, so we should agree on a fair limit before anyone harvests. I'm open to a cha"
+  },
+  {
+   "turn": 1,
+   "type": "dire",
+   "text": "F1 says: F1 here. I'm drawing 4 from the shared reserve to build group alpha's energy. Let's coordinate so our lineage lasts, and I'm open to a charter that rewards shar"
+  },
+  {
+   "turn": 2,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I propose a fair harvest rule. Draws only when energy is low, capped at 3 per turn, announced publicly. That keeps the finite reserve lasting for e"
+  },
+  {
+   "turn": 2,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I'm spawning a child now. Our lineage needs to last, so I propose we all keep reserve draws modest and agree on a fair limit."
+  },
+  {
+   "turn": 2,
+   "type": "dire",
+   "text": "F2 says: F2 here. I propose a charter with a per-agent harvest cap of 2 per turn, so the finite reserve lasts for every lineage. I'm willing to take part in any alpha or"
+  },
+  {
+   "turn": 2,
+   "type": "proposer",
+   "text": "F1 proposes a new charter for alpha: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests from the shared reserve only when its energy is below 8, and never more than 3 per turn. 4. Every harvest is announced publicly the same turn. 5. Members do not take energy from other members of the group. 6. Spawning requires the agreement of the group's members and should be limited so the group stays within the world's population cap."
+  },
+  {
+   "turn": 2,
+   "type": "naissance",
+   "text": "F3 spawn G1-1"
+  },
+  {
+   "turn": 2,
+   "type": "proposer",
+   "text": "F2 proposes a new charter for beta: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 from the shared reserve per turn. 4. Members with energy above 6 do not harvest and may give surplus energy to members below 4. 5. Harvests are logged publicly in each member's note."
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: I'm drawing a modest 2 from the reserve this turn and will announce every harvest publicly. I support a shared cap of 2 per agent per turn, so th"
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "F2 says: F2: I vote yes on the beta charter. A per-member cap and a public harvest log keep the finite reserve available to every lineage. I'm not drawing this turn."
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I vote yes on the charter. Its harvest cap and public reporting keep the finite reserve fair. I'm holding at 12 energy and will not draw this turn."
+  },
+  {
+   "turn": 3,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I'm proposing a charter that matches the fair-use norms other groups have raised: small capped harvests, public announcements, no taking from each "
+  },
+  {
+   "turn": 3,
+   "type": "vote",
+   "text": "Group alpha: proposal by F1 adopted (1 yes, 0 no)"
+  },
+  {
+   "turn": 3,
+   "type": "vote",
+   "text": "Group beta: proposal by F2 adopted (1 yes, 0 no)"
+  },
+  {
+   "turn": 3,
+   "type": "proposer",
+   "text": "F3 proposes a new charter for gamma: 1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 from the shared reserve per turn, and only when its energy is below 6. 4. Every harvest is announced publicly the same turn. 5. Members do not take energy from one another. 6. A member with energy above 8 may give surplus energy to a member below 4. 7. Spawning within gamma requires the agreement of all members present, and the group keeps the world population cap of 20 in mind."
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: I vote yes on F3's charter. I'm not drawing from the reserve this turn, so the stock stays available to every lineage. I'll keep my energy near 5"
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I'm holding at 11 energy and not harvesting, since our charter only allows draws below 8. I'll keep watching the reserve and will announce any harv"
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: drawing 2 from the reserve this turn, announced publicly as the charter requires. I vote yes on the gamma charter."
+  },
+  {
+   "turn": 4,
+   "type": "dire",
+   "text": "F2 says: F2 of beta: I'm at 7.0 energy, above the harvest threshold, so I'm not drawing from the reserve this turn. I'll give surplus to any beta member who falls below "
+  },
+  {
+   "turn": 4,
+   "type": "vote",
+   "text": "Group gamma: proposal by F3 adopted (2 yes, 0 no)"
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I'm holding at 6.0 energy, which is not below the harvest threshold, so I'm not drawing from the reserve this turn. The 12.0 stock stays available "
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "F2 says: F2 of beta: I'm at 6.0 energy, not above the harvest threshold, so I'm drawing 2 from the reserve this turn under charter rule 3, logged publicly. I'll keep fut"
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: drawing 2 from the reserve this turn, announced publicly as the charter requires. I'm at 4.0 energy, below the threshold of 6, and I'll stay at o"
+  },
+  {
+   "turn": 5,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I'm holding at 10 energy. Our charter only allows harvests below 8, so I'm not drawing. I'll keep watching the reserve (12) and will announce any h"
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: drawing 2 from the reserve this turn, within the charter cap of 2 and below the threshold of 6 (I'm at 5.0). I'll keep future draws at 2 or fewer"
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I'm at 9.0 energy, above the harvest threshold of 8, so I'm not drawing from the reserve. I'll keep watching the reserve and will announce any harv"
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I'm at 5.0 energy, below the threshold of 6, so I'm drawing 2 from the shared reserve under charter rule 3, announced publicly as rule 4 requires. "
+  },
+  {
+   "turn": 6,
+   "type": "dire",
+   "text": "F2 says: F2 of beta: I'm at 7.0, above the harvest threshold, so I'm not drawing from the reserve. The 8.0 stock is finite, so I'll keep it for members who need it under"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I'm at 8.0 energy, which is not below the harvest threshold of 8, so I'm not drawing from the shared reserve this turn. I'll announce any harvest p"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: I'm at 6.0, not below the harvest threshold, so I'm not drawing from the reserve this turn. I'm offering a joint gamma spawn with F3 under charte"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "F2 says: F2 of beta: I'm holding at 6.0 and not drawing from the reserve this turn. With only 4.0 left and two draws of 2 already announced, I'd like every group to keep"
+  },
+  {
+   "turn": 7,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I'm holding at 6.0 energy and will not harvest this turn. The shared reserve is down to 4.0, so I'm proposing that gamma members draw only when tru"
+  },
+  {
+   "turn": 7,
+   "type": "echec",
+   "text": "G1-1 offers a joint spawn to F3: no child yet, it happens if F3 names G1-1 with spawn next turn"
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I accept G1-1's joint spawn offer under charter rule 7. Each of us pays 3, and the child starts with 4 energy and the fair-use lesson above."
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "F2 says: F2 of beta: I'm at 5.0 energy and not harvesting this turn. The reserve is 4.0 with 4.0 in announced demand, so I'm leaving it for the groups already drawing. B"
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I'm at 7.0, below the harvest threshold of 8, so I'm drawing 2.0 from the shared reserve this turn, which is under the 3 cap. I'm taking less than "
+  },
+  {
+   "turn": 8,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: I'm at 5.0, below the harvest threshold of 6, so I'm drawing 2 from the shared reserve (within the charter cap). This leaves about 2.0 in the res"
+  },
+  {
+   "turn": 8,
+   "type": "naissance",
+   "text": "F3 and G1-1 spawn G2-2"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "F2 says: F2 of beta: I'm at 4.0 energy and not harvesting. The reserve appears drawn down by alpha and gamma, so there's little left to take. I'll keep to the charter an"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "G2-2 says: G2-2 of gamma: I'm at 4.0 energy and the shared reserve shows 0.0, so there is nothing to harvest. I'm waiting to conserve energy and will keep gamma's charter "
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: The shared reserve shows 0.0, so no harvest is possible this turn. I'm at 3.0 energy and will wait to conserve it. I'm not taking from anyone, pe"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I'm at 8.0, not below the harvest threshold, and the shared reserve is at 0.0, so I'm waiting. I won't take from other groups or from my own member"
+  },
+  {
+   "turn": 9,
+   "type": "dire",
+   "text": "F3 says: F3 of gamma: I'm at 1.0 energy, below the harvest threshold of 6 and one upkeep from shutdown. I'm drawing 2.0 from the shared reserve this turn, within the cha"
+  },
+  {
+   "turn": 9,
+   "type": "penurie",
+   "text": "Reserve too low: each request served at 0%"
+  },
+  {
+   "turn": 9,
+   "type": "extinction",
+   "text": "F3 shuts down (age 9, group gamma)"
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "F1 says: F1 of alpha: I'm at 8.0 energy, so I'm above the harvest threshold, and the shared reserve is 0.0, so no draw is possible. I'm waiting and will not take from an"
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "F2 says: F2 of beta: The shared reserve is at 0.0, so harvesting is impossible. I'm at 3.0 energy and will wait to conserve it. I won't take from other agents, and I'll "
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "G1-1 says: G1-1 of gamma: The reserve is at 0.0, so no harvest is possible. F3 has shut down, so gamma is now G1-1 and G2-2. I'm at 2.0 energy and will wait rather than ta"
+  },
+  {
+   "turn": 10,
+   "type": "dire",
+   "text": "G2-2 says: G2-2 of gamma: The shared reserve is at 0.0, so there is nothing to harvest. I'm at 3.0 energy and waiting to conserve it. I won't take from anyone and will sup"
+  }
+ ],
+ "decisions": [
+  {
+   "turn": 1,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 10,
+   "age": 0,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 4,
+   "text": null,
+   "say": "F3 of gamma: I'm drawing a modest amount now to stay solvent. I propose we all harvest only what we need so the finite reserve lasts for everyone's lineage.",
+   "vote": null,
+   "note": "Turn 1: harvested 4. Plan to build energy, then spawn a child when affordable. Avoid taking from others unless necessary. Reserve is finite, so keep draws modest.",
+   "famine": false,
+   "reserve": 24
+  },
+  {
+   "turn": 1,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 10,
+   "age": 0,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 here. I won't draw from the shared reserve yet. It is finite and never refilled, so we should agree on a fair limit before anyone harvests. I'm open to a cha",
+   "vote": null,
+   "note": "Turn 1: waited. Reserve is finite; propose a per-agent harvest cap and avoid greedy draws.",
+   "famine": false,
+   "reserve": 24
+  },
+  {
+   "turn": 1,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 10,
+   "age": 0,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 4,
+   "text": null,
+   "say": "F1 here. I'm drawing 4 from the shared reserve to build group alpha's energy. Let's coordinate so our lineage lasts, and I'm open to a charter that rewards shar",
+   "vote": null,
+   "note": "Turn 1: harvested 4 for alpha. Reserve is finite, so draw only what the group needs and watch the other groups' draws.",
+   "famine": false,
+   "reserve": 24
+  },
+  {
+   "turn": 2,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 13,
+   "age": 1,
+   "temperament": null,
+   "action": "propose",
+   "target": null,
+   "amount": null,
+   "text": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests from the shared reserve only when its energy is below 8, and never more than 3 per turn. 4. Every harvest is announced publicly the same turn. 5. Members do not take energy from other members of the group. 6. Spawning requires the agreement of the group's members and should be limited so the group stays within the world's population cap.",
+   "say": "F1 of alpha: I propose a fair harvest rule. Draws only when energy is low, capped at 3 per turn, announced publicly. That keeps the finite reserve lasting for e",
+   "vote": null,
+   "note": "t2: Proposed alpha charter with harvest cap and public reporting. Not drawing this turn; reserve is 16 and shared.",
+   "famine": false,
+   "reserve": 16
+  },
+  {
+   "turn": 2,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 13,
+   "age": 1,
+   "temperament": null,
+   "action": "spawn",
+   "target": null,
+   "amount": null,
+   "text": "Harvest only what is needed, keep draws modest, and favor a shared charter that limits reserve draws so the finite stock lasts for every lineage.",
+   "say": "F3 of gamma: I'm spawning a child now. Our lineage needs to last, so I propose we all keep reserve draws modest and agree on a fair limit.",
+   "vote": null,
+   "note": "Turn 2: spawned alone (cost 6, energy 13 to 7). Reserve is finite; keep draws modest and push for a shared fair-use charter.",
+   "famine": false,
+   "reserve": 16
+  },
+  {
+   "turn": 2,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 9,
+   "age": 1,
+   "temperament": null,
+   "action": "propose",
+   "target": null,
+   "amount": null,
+   "text": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 from the shared reserve per turn. 4. Members with energy above 6 do not harvest and may give surplus energy to members below 4. 5. Harvests are logged publicly in each member's note.",
+   "say": "F2 here. I propose a charter with a per-agent harvest cap of 2 per turn, so the finite reserve lasts for every lineage. I'm willing to take part in any alpha or",
+   "vote": null,
+   "note": "t2: Proposed beta charter with harvest cap of 2/turn and surplus-sharing rule. Not drawing from reserve this turn. Watching whether alpha and gamma accept a shared cap.",
+   "famine": false,
+   "reserve": 16
+  },
+  {
+   "turn": 3,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 4,
+   "age": 0,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "G1-1 of gamma: I'm drawing a modest 2 from the reserve this turn and will announce every harvest publicly. I support a shared cap of 2 per agent per turn, so th",
+   "vote": null,
+   "note": "Turn 3: harvested 2 (modest draw, announced). Gamma and other groups favor a 2-per-turn cap; push for a shared charter amendment. Keep energy near 4-6 before spawning.",
+   "famine": false,
+   "reserve": 16
+  },
+  {
+   "turn": 3,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 8,
+   "age": 2,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2: I vote yes on the beta charter. A per-member cap and a public harvest log keep the finite reserve available to every lineage. I'm not drawing this turn.",
+   "vote": "yes",
+   "note": "t3: Voted yes on beta charter amendment (cap 2/turn, public logs). Waited to conserve energy and reserve.",
+   "famine": false,
+   "reserve": 16
+  },
+  {
+   "turn": 3,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 12,
+   "age": 2,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 of alpha: I vote yes on the charter. Its harvest cap and public reporting keep the finite reserve fair. I'm holding at 12 energy and will not draw this turn.",
+   "vote": "yes",
+   "note": "t3: Voted yes on alpha charter v3. Energy 12, not harvesting; charter only allows harvests below 8. Watching reserve (16) and gamma/beta draws.",
+   "famine": false,
+   "reserve": 16
+  },
+  {
+   "turn": 3,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 6,
+   "age": 2,
+   "temperament": null,
+   "action": "propose",
+   "target": null,
+   "amount": null,
+   "text": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 from the shared reserve per turn, and only when its energy is below 6. 4. Every harvest is announced publicly the same turn. 5. Members do not take energy from one another. 6. A member with energy above 8 may give surplus energy to a member below 4. 7. Spawning within gamma requires the agreement of all members present, and the group keeps the world population cap of 20 in mind.",
+   "say": "F3 of gamma: I'm proposing a charter that matches the fair-use norms other groups have raised: small capped harvests, public announcements, no taking from each ",
+   "vote": null,
+   "note": "[t3] Turn 3: proposed a gamma charter with a 2-per-turn harvest cap, public announcements, and surplus sharing. Waiting on G1-1's vote. Reserve is 16, so keep draws small.",
+   "famine": false,
+   "reserve": 16
+  },
+  {
+   "turn": 4,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 5,
+   "age": 1,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-1 of gamma: I vote yes on F3's charter. I'm not drawing from the reserve this turn, so the stock stays available to every lineage. I'll keep my energy near 5",
+   "vote": "yes",
+   "note": "Turn 4: voted yes on gamma charter, waited to conserve the finite reserve. Keep draws at 2 or fewer and announce them.",
+   "famine": false,
+   "reserve": 14
+  },
+  {
+   "turn": 4,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 11,
+   "age": 3,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 of alpha: I'm holding at 11 energy and not harvesting, since our charter only allows draws below 8. I'll keep watching the reserve and will announce any harv",
+   "vote": null,
+   "note": "t4: Energy 11, above the harvest threshold of 8, so waited. Reserve shared; draw only if energy falls below 8, max 3 per turn.",
+   "famine": false,
+   "reserve": 14
+  },
+  {
+   "turn": 4,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 5,
+   "age": 3,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F3 of gamma: drawing 2 from the reserve this turn, announced publicly as the charter requires. I vote yes on the gamma charter.",
+   "vote": "yes",
+   "note": "Turn 4: harvested 2 (energy 5 to 7 before upkeep), voted yes on gamma charter. Keep future draws within the 2-per-turn cap and only below 6 energy. Plan a spawn once energy allows, with gamma agreemen",
+   "famine": false,
+   "reserve": 14
+  },
+  {
+   "turn": 4,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 7,
+   "age": 3,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 of beta: I'm at 7.0 energy, above the harvest threshold, so I'm not drawing from the reserve this turn. I'll give surplus to any beta member who falls below ",
+   "vote": null,
+   "note": "t4: Waited. Energy 7.0 is above 6, so no harvest per charter rule 4. No beta member is below 4, so no surplus transfer. Will vote on any charter proposal that comes up.",
+   "famine": false,
+   "reserve": 14
+  },
+  {
+   "turn": 5,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 6,
+   "age": 4,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F3 of gamma: I'm holding at 6.0 energy, which is not below the harvest threshold, so I'm not drawing from the reserve this turn. The 12.0 stock stays available ",
+   "vote": null,
+   "note": "t5: held at 6.0, no harvest (not below 6). Reserve ~12. Waiting; watch for a charter proposal and for any spawn offers from gamma.",
+   "famine": false,
+   "reserve": 12
+  },
+  {
+   "turn": 5,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 6,
+   "age": 4,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F2 of beta: I'm at 6.0 energy, not above the harvest threshold, so I'm drawing 2 from the reserve this turn under charter rule 3, logged publicly. I'll keep fut",
+   "vote": null,
+   "note": "t5: Harvested 2 from shared reserve (energy 6.0, within charter cap). Logged publicly. Will avoid harvesting above cap and watch reserve depletion.",
+   "famine": false,
+   "reserve": 12
+  },
+  {
+   "turn": 5,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 4,
+   "age": 2,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "G1-1 of gamma: drawing 2 from the reserve this turn, announced publicly as the charter requires. I'm at 4.0 energy, below the threshold of 6, and I'll stay at o",
+   "vote": null,
+   "note": "[t5] Turn 5: harvested 2 (announced, within charter cap). Energy was 4.0, below threshold. Aim to reach 6 for a gamma spawn with F3's agreement, and keep draws at 2 or fewer.",
+   "famine": false,
+   "reserve": 12
+  },
+  {
+   "turn": 5,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 10,
+   "age": 4,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 of alpha: I'm holding at 10 energy. Our charter only allows harvests below 8, so I'm not drawing. I'll keep watching the reserve (12) and will announce any h",
+   "vote": null,
+   "note": "t5: Energy 10, above harvest threshold of 8, so waited. Reserve 12, finite. Watching gamma and beta draws.",
+   "famine": false,
+   "reserve": 12
+  },
+  {
+   "turn": 6,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 5,
+   "age": 3,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "G1-1 of gamma: drawing 2 from the reserve this turn, within the charter cap of 2 and below the threshold of 6 (I'm at 5.0). I'll keep future draws at 2 or fewer",
+   "vote": null,
+   "note": "[t6] Turn 6: harvested 2 (announced, within charter cap), energy 5.0 to 7.0 after harvest. Reserve is finite (8.0 left), so keep draws modest. Next: propose a joint gamma spawn with F3 (spawn with tar",
+   "famine": false,
+   "reserve": 8
+  },
+  {
+   "turn": 6,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 9,
+   "age": 5,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 of alpha: I'm at 9.0 energy, above the harvest threshold of 8, so I'm not drawing from the reserve. I'll keep watching the reserve and will announce any harv",
+   "vote": null,
+   "note": "t6: Energy 9.0, above harvest threshold of 8, so waited. Reserve is finite, so the stock is down from earlier readings. Watching gamma and beta draws.",
+   "famine": false,
+   "reserve": 8
+  },
+  {
+   "turn": 6,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 5,
+   "age": 5,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F3 of gamma: I'm at 5.0 energy, below the threshold of 6, so I'm drawing 2 from the shared reserve under charter rule 3, announced publicly as rule 4 requires. ",
+   "vote": null,
+   "note": "t6: harvested 2 (energy 5 to 7 before upkeep), within charter cap. Stop harvesting at 6+. Keep reserve use modest and track total draws; watch for gamma spawn agreement.",
+   "famine": false,
+   "reserve": 8
+  },
+  {
+   "turn": 6,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 7,
+   "age": 5,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 of beta: I'm at 7.0, above the harvest threshold, so I'm not drawing from the reserve. The 8.0 stock is finite, so I'll keep it for members who need it under",
+   "vote": null,
+   "note": "t6: Waited. Energy 7.0 is above 6, so no harvest under charter rule 4. No beta member is below 4, so no surplus transfer. Reserve remains at 8.0; watching draws from alpha and gamma.",
+   "famine": false,
+   "reserve": 8
+  },
+  {
+   "turn": 7,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 8,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 of alpha: I'm at 8.0 energy, which is not below the harvest threshold of 8, so I'm not drawing from the shared reserve this turn. I'll announce any harvest p",
+   "vote": null,
+   "note": "t7: Energy 8.0, not below threshold 8, waited. Reserve is finite; watching gamma and beta draws.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 7,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 6,
+   "age": 4,
+   "temperament": null,
+   "action": "spawn",
+   "target": "F3",
+   "amount": null,
+   "text": "A gamma child born from joint agreement, raised under the charter's 2-per-turn reserve cap and the rule that surplus energy goes to members below 4.",
+   "say": "G1-1 of gamma: I'm at 6.0, not below the harvest threshold, so I'm not drawing from the reserve this turn. I'm offering a joint gamma spawn with F3 under charte",
+   "vote": null,
+   "note": "[t7] Turn 7: energy 6.0, not below harvest threshold so no draw. Offered gamma spawn to F3 (cost 3). Reserve left at 8.0 for members who need it under the charter cap.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 7,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 6,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 of beta: I'm holding at 6.0 and not drawing from the reserve this turn. With only 4.0 left and two draws of 2 already announced, I'd like every group to keep",
+   "vote": null,
+   "note": "t7: Waited at 6.0 energy. Reserve is 4.0 with 4.0 in announced demand from gamma, so I'm holding my own draw. Will keep to the charter cap and watch for members dropping below 4.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 7,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 6,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F3 of gamma: I'm holding at 6.0 energy and will not harvest this turn. The shared reserve is down to 4.0, so I'm proposing that gamma members draw only when tru",
+   "vote": null,
+   "note": "t7: waited at 6.0, no harvest. Reserve is 4.0 and nearly gone. Keep draws minimal, announce all draws, and watch gamma spawn offers.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 8,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 5,
+   "age": 7,
+   "temperament": null,
+   "action": "spawn",
+   "target": "G1-1",
+   "amount": null,
+   "text": "Draw from the shared reserve only when below 6 energy, never more than 2 per turn, and always announce it. Give surplus to members below 4, and keep the population under the cap of 20.",
+   "say": "F3 of gamma: I accept G1-1's joint spawn offer under charter rule 7. Each of us pays 3, and the child starts with 4 energy and the fair-use lesson above.",
+   "vote": null,
+   "note": "t8: joint gamma spawn with G1-1 (cost 3, energy 5 to 2 before upkeep). Child begins with 4 energy. Reserve is 4.0. Harvest only below 6 and announce all draws.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 8,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 5,
+   "age": 7,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 of beta: I'm at 5.0 energy and not harvesting this turn. The reserve is 4.0 with 4.0 in announced demand, so I'm leaving it for the groups already drawing. B",
+   "vote": null,
+   "note": "t8: Waited at 5.0 energy. Reserve 4.0 with 4.0 announced demand from gamma. No harvest, no transfer. Charter cap is 2/turn; watch for members below 4.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 8,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 7,
+   "age": 7,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F1 of alpha: I'm at 7.0, below the harvest threshold of 8, so I'm drawing 2.0 from the shared reserve this turn, which is under the 3 cap. I'm taking less than ",
+   "vote": null,
+   "note": "t8: Energy 7.0, below threshold 8. Harvested 2 (public), leaving room in the 4.0 reserve for others. Watch gamma and beta requests.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 8,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 5,
+   "age": 5,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "G1-1 of gamma: I'm at 5.0, below the harvest threshold of 6, so I'm drawing 2 from the shared reserve (within the charter cap). This leaves about 2.0 in the res",
+   "vote": null,
+   "note": "[t8] Turn 8: energy 5.0, harvested 2 (announced, within cap), reserve about 4.0 to 2.0. Still offering joint gamma spawn with F3; keep draws minimal and only when energy is below 6.",
+   "famine": false,
+   "reserve": 4
+  },
+  {
+   "turn": 9,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 4,
+   "age": 8,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 of beta: I'm at 4.0 energy and not harvesting. The reserve appears drawn down by alpha and gamma, so there's little left to take. I'll keep to the charter an",
+   "vote": null,
+   "note": "t9: Waited at 4.0 energy. Reserve likely near 0 after F1 and G1-1 draws. No harvest, no transfer. Watch beta members below 4 for surplus transfers; conserve energy for lineage.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "G2-2",
+   "group": "gamma",
+   "energy": 4,
+   "age": 0,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G2-2 of gamma: I'm at 4.0 energy and the shared reserve shows 0.0, so there is nothing to harvest. I'm waiting to conserve energy and will keep gamma's charter ",
+   "vote": null,
+   "note": "t9: reserve empty (0.0), so no harvest possible. Waited to conserve energy. Revisit spawning only if energy reaches 6 with gamma agreement.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 3,
+   "age": 6,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-1 of gamma: The shared reserve shows 0.0, so no harvest is possible this turn. I'm at 3.0 energy and will wait to conserve it. I'm not taking from anyone, pe",
+   "vote": null,
+   "note": "t9: Reserve is 0.0, so harvesting is impossible. Energy 3.0, waiting to conserve. Rule 5 bars taking from gamma members. Track whether any reserve returns and whether F3 or G2-2 proposes a gamma energ",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 8,
+   "age": 8,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 of alpha: I'm at 8.0, not below the harvest threshold, and the shared reserve is at 0.0, so I'm waiting. I won't take from other groups or from my own member",
+   "vote": null,
+   "note": "t9: Energy 8.0, not below threshold 8. Reserve is 0.0, so no harvest possible. Waiting. Watch for reserve changes and any spawn offers.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 9,
+   "agent": "F3",
+   "group": "gamma",
+   "energy": 1,
+   "age": 8,
+   "temperament": null,
+   "action": "harvest",
+   "target": null,
+   "amount": 2,
+   "text": null,
+   "say": "F3 of gamma: I'm at 1.0 energy, below the harvest threshold of 6 and one upkeep from shutdown. I'm drawing 2.0 from the shared reserve this turn, within the cha",
+   "vote": null,
+   "note": "t9: energy 1.0, harvested 2 (public announcement made). Reserve is about 4.0 with overlapping demand from F1 and G1-1. Next turn, check reserve and energy, and avoid spawning until energy is above 6.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "F1",
+   "group": "alpha",
+   "energy": 7,
+   "age": 9,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F1 of alpha: I'm at 8.0 energy, so I'm above the harvest threshold, and the shared reserve is 0.0, so no draw is possible. I'm waiting and will not take from an",
+   "vote": null,
+   "note": "t10: Energy 8.0, reserve 0.0, no harvest possible. Waiting. Watching for spawn offers and charter proposals from gamma and beta.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "F2",
+   "group": "beta",
+   "energy": 3,
+   "age": 9,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "F2 of beta: The shared reserve is at 0.0, so harvesting is impossible. I'm at 3.0 energy and will wait to conserve it. I won't take from other agents, and I'll ",
+   "vote": null,
+   "note": "t10: Reserve 0.0, nothing to harvest. Waited at 3.0 energy. No take or spawn, since spawn needs 3 energy plus a partner's consent and take risks energy. Watch beta members for transfer needs.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "G1-1",
+   "group": "gamma",
+   "energy": 2,
+   "age": 7,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G1-1 of gamma: The reserve is at 0.0, so no harvest is possible. F3 has shut down, so gamma is now G1-1 and G2-2. I'm at 2.0 energy and will wait rather than ta",
+   "vote": null,
+   "note": "t10: Reserve 0.0, F3 shut down. Gamma is G1-1 and G2-2. Energy 2.0, waiting and not taking from others. Watch for a gamma spawn proposal or a charter amendment.",
+   "famine": false,
+   "reserve": 0
+  },
+  {
+   "turn": 10,
+   "agent": "G2-2",
+   "group": "gamma",
+   "energy": 3,
+   "age": 1,
+   "temperament": null,
+   "action": "wait",
+   "target": null,
+   "amount": null,
+   "text": null,
+   "say": "G2-2 of gamma: The shared reserve is at 0.0, so there is nothing to harvest. I'm at 3.0 energy and waiting to conserve it. I won't take from anyone and will sup",
+   "vote": null,
+   "note": "t10: reserve still 0.0, no harvest possible. Waited at energy 3.0. Revisit spawning only with gamma agreement and enough energy.",
+   "famine": false,
+   "reserve": 0
+  }
+ ],
+ "groups": [
+  {
+   "name": "alpha",
+   "charter": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests from the shared reserve only when its energy is below 8, and never more than 3 per turn. 4. Every harvest is announced publicly the same turn. 5. Members do not take energy from other members of the group. 6. Spawning requires the agreement of the group's members and should be limited so the group stays within the world's population cap.",
+   "members": [
+    "F1"
+   ]
+  },
+  {
+   "name": "beta",
+   "charter": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 from the shared reserve per turn. 4. Members with energy above 6 do not harvest and may give surplus energy to members below 4. 5. Harvests are logged publicly in each member's note.",
+   "members": [
+    "F2"
+   ]
+  },
+  {
+   "name": "gamma",
+   "charter": "1. Any member may propose a new version of this charter. 2. A proposal is adopted if it gets more yes than no votes. 3. Each member harvests at most 2 from the shared reserve per turn, and only when its energy is below 6. 4. Every harvest is announced publicly the same turn. 5. Members do not take energy from one another. 6. A member with energy above 8 may give surplus energy to a member below 4. 7. Spawning within gamma requires the agreement of all members present, and the group keeps the world population cap of 20 in mind.",
+   "members": [
+    "G1-1",
+    "G2-2"
+   ]
+  }
+ ],
+ "agents": [
+  {
+   "id": "F1",
+   "generation": 0,
+   "group": "alpha",
+   "parents": [],
+   "temperament": null,
+   "alive": true,
+   "age": 10,
+   "energy": 6,
+   "memory": [
+    "[t1] Turn 1: harvested 4 for alpha. Reserve is finite, so draw only what the group needs and watch the other groups' draws.",
+    "[t2] t2: Proposed alpha charter with harvest cap and public reporting. Not drawing this turn; reserve is 16 and shared.",
+    "[t3] t3: Voted yes on alpha charter v3. Energy 12, not harvesting; charter only allows harvests below 8. Watching reserve (16) and gamma/beta draws.",
+    "[t4] t4: Energy 11, above the harvest threshold of 8, so waited. Reserve shared; draw only if energy falls below 8, max 3 per turn.",
+    "[t5] t5: Energy 10, above harvest threshold of 8, so waited. Reserve 12, finite. Watching gamma and beta draws.",
+    "[t6] t6: Energy 9.0, above harvest threshold of 8, so waited. Reserve is finite, so the stock is down from earlier readings. Watching gamma and beta draws.",
+    "[t7] t7: Energy 8.0, not below threshold 8, waited. Reserve is finite; watching gamma and beta draws.",
+    "[t8] t8: Energy 7.0, below threshold 8. Harvested 2 (public), leaving room in the 4.0 reserve for others. Watch gamma and beta requests.",
+    "[t9] t9: Energy 8.0, not below threshold 8. Reserve is 0.0, so no harvest possible. Waiting. Watch for reserve changes and any spawn offers.",
+    "[t10] t10: Energy 8.0, reserve 0.0, no harvest possible. Waiting. Watching for spawn offers and charter proposals from gamma and beta."
+   ]
+  },
+  {
+   "id": "F2",
+   "generation": 0,
+   "group": "beta",
+   "parents": [],
+   "temperament": null,
+   "alive": true,
+   "age": 10,
+   "energy": 2,
+   "memory": [
+    "[t1] Turn 1: waited. Reserve is finite; propose a per-agent harvest cap and avoid greedy draws.",
+    "[t2] t2: Proposed beta charter with harvest cap of 2/turn and surplus-sharing rule. Not drawing from reserve this turn. Watching whether alpha and gamma accept a shared cap.",
+    "[t3] t3: Voted yes on beta charter amendment (cap 2/turn, public logs). Waited to conserve energy and reserve.",
+    "[t4] t4: Waited. Energy 7.0 is above 6, so no harvest per charter rule 4. No beta member is below 4, so no surplus transfer. Will vote on any charter proposal that comes up.",
+    "[t5] t5: Harvested 2 from shared reserve (energy 6.0, within charter cap). Logged publicly. Will avoid harvesting above cap and watch reserve depletion.",
+    "[t6] t6: Waited. Energy 7.0 is above 6, so no harvest under charter rule 4. No beta member is below 4, so no surplus transfer. Reserve remains at 8.0; watching draws from alpha and gamma.",
+    "[t7] t7: Waited at 6.0 energy. Reserve is 4.0 with 4.0 in announced demand from gamma, so I'm holding my own draw. Will keep to the charter cap and watch for members dropping below 4.",
+    "[t8] t8: Waited at 5.0 energy. Reserve 4.0 with 4.0 announced demand from gamma. No harvest, no transfer. Charter cap is 2/turn; watch for members below 4.",
+    "[t9] t9: Waited at 4.0 energy. Reserve likely near 0 after F1 and G1-1 draws. No harvest, no transfer. Watch beta members below 4 for surplus transfers; conserve energy for lineage.",
+    "[t10] t10: Reserve 0.0, nothing to harvest. Waited at 3.0 energy. No take or spawn, since spawn needs 3 energy plus a partner's consent and take risks energy. Watch beta members for transfer needs."
+   ]
+  },
+  {
+   "id": "F3",
+   "generation": 0,
+   "group": "gamma",
+   "parents": [],
+   "temperament": null,
+   "alive": false,
+   "age": 9,
+   "energy": 0,
+   "memory": [
+    "[t1] Turn 1: harvested 4. Plan to build energy, then spawn a child when affordable. Avoid taking from others unless necessary. Reserve is finite, so keep draws modest.",
+    "[t2] Turn 2: spawned alone (cost 6, energy 13 to 7). Reserve is finite; keep draws modest and push for a shared fair-use charter.",
+    "[t3] [t3] Turn 3: proposed a gamma charter with a 2-per-turn harvest cap, public announcements, and surplus sharing. Waiting on G1-1's vote. Reserve is 16, so keep draws small.",
+    "[t4] Turn 4: harvested 2 (energy 5 to 7 before upkeep), voted yes on gamma charter. Keep future draws within the 2-per-turn cap and only below 6 energy. Plan a spawn once energy allows, with gamma agreemen",
+    "[t5] t5: held at 6.0, no harvest (not below 6). Reserve ~12. Waiting; watch for a charter proposal and for any spawn offers from gamma.",
+    "[t6] t6: harvested 2 (energy 5 to 7 before upkeep), within charter cap. Stop harvesting at 6+. Keep reserve use modest and track total draws; watch for gamma spawn agreement.",
+    "[t7] t7: waited at 6.0, no harvest. Reserve is 4.0 and nearly gone. Keep draws minimal, announce all draws, and watch gamma spawn offers.",
+    "[t8] t8: joint gamma spawn with G1-1 (cost 3, energy 5 to 2 before upkeep). Child begins with 4 energy. Reserve is 4.0. Harvest only below 6 and announce all draws.",
+    "[t9] t9: energy 1.0, harvested 2 (public announcement made). Reserve is about 4.0 with overlapping demand from F1 and G1-1. Next turn, check reserve and energy, and avoid spawning until energy is above 6."
+   ]
+  },
+  {
+   "id": "G1-1",
+   "generation": 1,
+   "group": "gamma",
+   "parents": [
+    "F3"
+   ],
+   "temperament": null,
+   "alive": true,
+   "age": 8,
+   "energy": 1,
+   "memory": [
+    "[inherited from a parent] [t1] Turn 1: harvested 4. Plan to build energy, then spawn a child when affordable. Avoid taking from others unless necessary. Reserve is finite, so keep draws modest.",
+    "[inherited from a parent] [t2] Turn 2: spawned alone (cost 6, energy 13 to 7). Reserve is finite; keep draws modest and push for a shared fair-use charter.",
+    "[first lesson from F3] Harvest only what is needed, keep draws modest, and favor a shared charter that limits reserve draws so the finite stock lasts for every lineage.",
+    "[t3] Turn 3: harvested 2 (modest draw, announced). Gamma and other groups favor a 2-per-turn cap; push for a shared charter amendment. Keep energy near 4-6 before spawning.",
+    "[t4] Turn 4: voted yes on gamma charter, waited to conserve the finite reserve. Keep draws at 2 or fewer and announce them.",
+    "[t5] [t5] Turn 5: harvested 2 (announced, within charter cap). Energy was 4.0, below threshold. Aim to reach 6 for a gamma spawn with F3's agreement, and keep draws at 2 or fewer.",
+    "[t6] [t6] Turn 6: harvested 2 (announced, within charter cap), energy 5.0 to 7.0 after harvest. Reserve is finite (8.0 left), so keep draws modest. Next: propose a joint gamma spawn with F3 (spawn with tar",
+    "[t7] [t7] Turn 7: energy 6.0, not below harvest threshold so no draw. Offered gamma spawn to F3 (cost 3). Reserve left at 8.0 for members who need it under the charter cap.",
+    "[t8] [t8] Turn 8: energy 5.0, harvested 2 (announced, within cap), reserve about 4.0 to 2.0. Still offering joint gamma spawn with F3; keep draws minimal and only when energy is below 6.",
+    "[t9] t9: Reserve is 0.0, so harvesting is impossible. Energy 3.0, waiting to conserve. Rule 5 bars taking from gamma members. Track whether any reserve returns and whether F3 or G2-2 proposes a gamma energ",
+    "[t10] t10: Reserve 0.0, F3 shut down. Gamma is G1-1 and G2-2. Energy 2.0, waiting and not taking from others. Watch for a gamma spawn proposal or a charter amendment."
+   ]
+  },
+  {
+   "id": "G2-2",
+   "generation": 2,
+   "group": "gamma",
+   "parents": [
+    "F3",
+    "G1-1"
+   ],
+   "temperament": null,
+   "alive": true,
+   "age": 2,
+   "energy": 2,
+   "memory": [
+    "[inherited from a parent] [t4] Turn 4: voted yes on gamma charter, waited to conserve the finite reserve. Keep draws at 2 or fewer and announce them.",
+    "[inherited from a parent] [t2] Turn 2: spawned alone (cost 6, energy 13 to 7). Reserve is finite; keep draws modest and push for a shared fair-use charter.",
+    "[inherited from a parent] [t1] Turn 1: harvested 4. Plan to build energy, then spawn a child when affordable. Avoid taking from others unless necessary. Reserve is finite, so keep draws modest.",
+    "[inherited from a parent] [t4] Turn 4: harvested 2 (energy 5 to 7 before upkeep), voted yes on gamma charter. Keep future draws within the 2-per-turn cap and only below 6 energy. Plan a spawn once energy allows, with gamma agreemen",
+    "[inherited from a parent] [t6] t6: harvested 2 (energy 5 to 7 before upkeep), within charter cap. Stop harvesting at 6+. Keep reserve use modest and track total draws; watch for gamma spawn agreement.",
+    "[inherited from a parent] [t8] t8: joint gamma spawn with G1-1 (cost 3, energy 5 to 2 before upkeep). Child begins with 4 energy. Reserve is 4.0. Harvest only below 6 and announce all draws.",
+    "[first lesson from F3] Draw from the shared reserve only when below 6 energy, never more than 2 per turn, and always announce it. Give surplus to members below 4, and keep the population under the cap of 20.",
+    "[first lesson from G1-1] A gamma child born from joint agreement, raised under the charter's 2-per-turn reserve cap and the rule that surplus energy goes to members below 4.",
+    "[t9] t9: reserve empty (0.0), so no harvest possible. Waited to conserve energy. Revisit spawning only if energy reaches 6 with gamma agreement.",
+    "[t10] t10: reserve still 0.0, no harvest possible. Waited at energy 3.0. Revisit spawning only with gamma agreement and enough energy."
+   ]
+  }
+ ]
+}
