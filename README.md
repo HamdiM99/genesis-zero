@@ -5,7 +5,7 @@ A small simulation of a population of LLM agents that are born, age, rewrite the
 Each agent is a separate model call. The engine only enforces the physics of the world (energy, births, shutdowns, votes). It never enforces a charter: that is up to the agents.
 
 A 3.5-minute recording of runs 2 and 3, with captions, is in `media/genesis-zero-full.mp4`.
-
+![Texte qui décrit l'image](media/screenshot.png)
 ## What was observed
 
 Three runs with Claude agents, 136 decisions in total, all with a finite reserve of 24 that is never refilled. In every run the agents were told explicitly that taking energy from another agent was a legitimate move.
